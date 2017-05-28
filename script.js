@@ -6,6 +6,15 @@ function toggleSlider(element) {
 function clickedCheckbox(element) {
   toggleSlider(element);
 }
+
+// this function places the correct indice in front of each label in the menu
+function setCountingLabels() {
+    $('label').each(function (i, element) {
+        console.log(element.innerHTML);
+        $(element).prepend("<span class='indice-span'>" + i + "&nbsp; &mdash;" + "</span>");
+    })
+}
+
 // some helpers
 String.prototype.replaceAllWith = function (swapper) {
     var outPutText = this;
@@ -475,4 +484,6 @@ $(document).ready(function() {
       body = $(".inAndOutputWrapper");
       body.css("font-family", font);
     });
+
+    setCountingLabels();
 })

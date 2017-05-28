@@ -124,10 +124,19 @@ h2.font-title {
   display: none;
 }
 
+.hidden-checkbox {
+  display: none;
+}
+
+.indice-span {
+  width: 50px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 25px;
+}
 
 /* TEXT-FIELDS */
 
 .woord {
   display: inline-block;
 }
-
