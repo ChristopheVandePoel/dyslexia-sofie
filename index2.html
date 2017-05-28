@@ -2,13 +2,14 @@
   <head>
       <meta charset="UTF-8">
       <title>DYSLECTIC</title>
+      <base href=".">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="jquery.keyframes.js"></script>
-      <script src="jquery.typer.js"></script>
-      <script src="script.js"></script>
-      <link rel="stylesheet" type="text/css" href="reset.css"/>
-      <link rel="stylesheet" type="text/css" href="styles2.css"/>
-      <link rel="stylesheet" type="text/css" href="printstyles.css" media="print"/>
+      <script src="./jquery.keyframes.js"></script>
+      <script src="./jquery.typer.js"></script>
+      <script src="./script.js"></script>
+      <link rel="stylesheet" type="text/css" href="./reset.css"/>
+      <link rel="stylesheet" type="text/css" href="./styles2.css"/>
+      <link rel="stylesheet" type="text/css" href="./printstyles.css" media="print"/>
 
   </head>
   <body>
@@ -37,19 +38,18 @@
         <div class="fieldsetsWrapper">
           <div class="fieldsets">
             <fieldset>
-              <legend>Text Changes</legend>
-              <li>
-                <div class="select-wrapper">
-                  <select id="fonts">
-                    <option value="Helvetica">Helvetica</option>
-                    <option value="Times">Times</option>
-                    <option value="Times-Italic">Times Italic</option>
-                    <option value="Comic Sans MS">Comic Sans</option>
-                    <option value="Sofie Font">Sofie Font</option>
-                  </select>
-                </div>
-              </li>
-              <a href="index.html">reset</a>
+              <h2 class="font-title">LetterType</h2>
+              <div class="select-wrapper">
+                <select id="fonts">
+                  <option value="Helvetica">Helvetica</option>
+                  <option value="Times">Times</option>
+                  <option value="Times-Italic">Times Italic</option>
+                  <option value="Comic Sans MS">Comic Sans</option>
+                  <option value="Sofie Font">Sofie Font</option>
+                </select>
+              </div>
+              <h2 class="reset-link"><a href="">reset</a></h2>
+              <h2>Text Changes</h2>
               <div>
                 <p>
                     <label for="insideWordSwap-check">Verspringen in woorden</label>
@@ -88,7 +88,7 @@
             </fieldset>
 
             <fieldset>
-              <legend>Visual Changes</legend>
+              <h2>Visual Changes</h2>
               <div>
                 <p>
                   <label for="jump-check">Dansende letters</label>
@@ -178,7 +178,7 @@
           </fieldset>
 
           <fieldset>
-            <legend>Animations</legend>
+            <h2>Animations</h2>
             <div>
               <p>
                 <label for="slechteLetterHerkenning-check">Slechte letterherkenning</label>

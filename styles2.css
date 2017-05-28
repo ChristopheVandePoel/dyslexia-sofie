@@ -59,13 +59,21 @@ a:hover {
   outline: none;
   padding: 50px;
   font: inherit;
-  font-size: 1.5em;
+  font-size: 1.8em;
   line-height: 1.5em;
+}
+
+#output {
+  word-wrap: break-word;
 }
 
 .InputWrapper {
   border: 0;
   border-right: 2px solid black;
+}
+
+.OutputWrapper {
+
 }
 
 .body-flex {
@@ -77,6 +85,49 @@ a:hover {
 
 /*CONTROLS*/
 
+.fieldsets h2 {
+  text-transform: uppercase;
+  padding: 10px 0 10px 20px;
+}
+
+h2.reset-link {
+  padding-top: 0;
+}
+h2.font-title {
+  padding-bottom: 0;
+}
+
+.fieldsets #fonts{
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 0;
+  margin: 0;
+}
+
+.select-wrapper:after {
+  content: "↓";
+  font-size: 80%;
+}
+
+.fieldsets a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fieldsets a:hover {
+  color: blue;
+}
+
 .slider.hidden-slider {
   display: none;
 }
+
+
+/* TEXT-FIELDS */
+
+.woord {
+  display: inline-block;
+}
+
