@@ -11,7 +11,7 @@ function clickedCheckbox(element) {
 function setCountingLabels() {
     $('label').each(function (i, element) {
         console.log(element.innerHTML);
-        $(element).prepend("<span class='indice-span'>" + i + "&nbsp; &mdash;" + "</span>");
+        $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
     })
 }
 

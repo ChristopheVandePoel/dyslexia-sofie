@@ -45,6 +45,8 @@ a:hover {
 .fieldsetsWrapper {
   font-size: 1.5em;
   line-height: 1.2em;
+  padding-right: 20px;
+  overflow: auto;
 }
 
 .inAndOutputWrapper {
@@ -73,7 +75,7 @@ a:hover {
 }
 
 .OutputWrapper {
-
+  overflow: auto;
 }
 
 .body-flex {
@@ -87,7 +89,7 @@ a:hover {
 
 .fieldsets h2 {
   text-transform: uppercase;
-  padding: 10px 0 10px 20px;
+  padding: 10px 0 10px 50px;
 }
 
 h2.reset-link {
@@ -104,6 +106,10 @@ h2.font-title {
   -moz-appearance: none;
   padding: 0;
   margin: 0;
+}
+
+fieldset div {
+  line-height: 1.7em;
 }
 
 .select-wrapper:after {
