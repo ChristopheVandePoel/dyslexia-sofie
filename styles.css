@@ -1,0 +1,172 @@
+@import "fonts.css";
+
+body, html {
+    margin: 0;
+    font-family: Helvetica;
+    font-style: normal;
+    font-size: 8pt;
+  }
+
+a {
+  color:#000;
+}
+
+h1 {
+    margin-bottom: 20px;
+  }
+
+.hide {
+  display: none;
+}
+
+.bodyWrapper {
+  padding:  20px;
+  padding-right: 5px;
+}
+
+/* navigatie */
+
+.nav {
+  background-color: #fff;
+  padding: 15px;
+  height: 1em;
+  border-bottom: 2px solid #000;
+  width: 95%;
+  margin-left: 15px;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  width: 33%;
+  float: left;
+}
+
+.nav .right {
+  text-align: right;
+}
+
+.nav .center {
+  text-align: center;
+}
+
+/* parameters */
+
+.fieldsetsWrapper {
+  float: right;
+  width: 15%;
+}
+
+#controls .fieldsets {
+
+  height: 100%;
+  border-left: 1px solid black;
+  overflow-y: scroll!important;
+}
+
+.inAndOutputWrapper {
+  float: left;
+  width: 84%;
+}
+
+fieldset {
+  border: none;
+  font-style: normal;
+  font-size: 10pt;
+}
+
+#controls .fieldsets fieldset p {
+  font-size: 14px;
+}
+
+#controls  textarea {
+  font-size: 16px;
+  color: black;
+}
+
+legend {
+  color: black;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 12pt;
+}
+
+#input  {
+  float: left;
+  width: 50%;
+  height: 100%;
+  border: none;
+  font-family: inherit;
+  border-right: 2px solid black;
+  padding: 20px;
+  padding-top: 0;
+  font-size: normal;
+  font-size: 12pt;
+  outline: none;
+}
+
+.OutputWrapper {
+  float: left;
+  width: 50%;
+}
+
+#output {
+  /*width: 100%;*/
+  overflow: scroll!important;
+  padding: 20px;
+  padding-top: 50px;
+  margin-top: -50px;
+  font-size: 12pt;
+  height: 100%;
+  word-wrap: break-word!important;
+}
+
+.woord {
+  display: inline-block;
+}
+
+.slider {
+  display: block;
+}
+.slider.hidden-slider {
+  display: none;
+}
+
+.checkbox.hidden-checkbox {
+  display: none;
+}
+
+label:hover {
+  cursor: pointer;
+  color: tomato;
+}
+
+/* select dropdown menu */
+
+#fonts {
+  border: none;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  padding-right: 20px;
+}
+
+.select-wrapper:after {
+  content: "↓";
+  left: -30px;
+  position: relative;
+  font-size: 80%;
+}
+
+@media print {
+  .fieldsets {
+    display: none;
+  }
+}
