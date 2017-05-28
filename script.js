@@ -1,5 +1,5 @@
 function toggleSlider(element) {
-  // console.log($('#' + element.value), element.checked);
+  console.log($('#' + element.value), element.checked);
   $('#' + element.value).css('display', (element.checked) ? 'block' : 'none');
 }
 
@@ -7,7 +7,8 @@ function clickedCheckbox(element) {
   toggleSlider(element);
 }
 
-// this function places the correct indice in front of each label in the menu
+// this function places the correct indice in front of each label in the menu,
+// so you don't have to do it manually when adding one
 function setCountingLabels() {
     $('label').each(function (i, element) {
         console.log(element.innerHTML);
@@ -248,9 +249,8 @@ function parseText(inputText) {
 
     $("#controls .checkbox").each(function() {
         if (this.checked) {
-            var sliderValue = parseFloat($(this).next().val());
+            var sliderValue = parseFloat($(this).siblings(".slider").val());
             var varValue = $(this).nextAll('input[type=radio]:checked').val();
-
             switch (this.value) {
             // textual changes
                 case "insideWordSwap":
@@ -486,4 +486,5 @@ $(document).ready(function() {
     });
 
     setCountingLabels();
+    parseText($("#input").val());
 })
