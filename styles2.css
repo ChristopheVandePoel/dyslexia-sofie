@@ -1,0 +1,82 @@
+@import "fonts.css";
+
+
+/* GENERAL LAYOUT */
+body, html {
+    font-family: Helvetica;
+    font-style: normal;
+    font-size: 8pt;
+  }
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  padding-left: 5px;
+}
+
+a:hover {
+  color: gray;
+}
+
+.nav {
+    display: block;
+    background-color: #313131;
+    letter-spacing: 5px;
+    font-size: 1.2em;
+    flex: 0;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.bodyWrapper {
+  flex: 1;
+  display: flex;
+}
+
+#controls {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.fieldsetsWrapper {
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.inAndOutputWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.InputWrapper, .OutputWrapper {
+  width: 50%;
+  flex: 1;
+  outline: none;
+  padding: 50px;
+  font: inherit;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.InputWrapper {
+  border: 0;
+  border-right: 2px solid black;
+}
+
+.body-flex {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*CONTROLS*/
+
+.slider.hidden-slider {
+  display: none;
+}
