@@ -1,5 +1,5 @@
 function toggleSlider(element) {
-  console.log($('#' + element.value), element.checked);
+  // console.log($('#' + element.value), element.checked);
   $('#' + element.value).css('display', (element.checked) ? 'block' : 'none');
 }
 
@@ -8,28 +8,30 @@ function clickedCheckbox(element) {
 }
 // some helpers
 String.prototype.replaceAllWith = function (swapper) {
-    var outPutText = this
-    var done = []
+    var outPutText = this;
+    var done = [];
     for (find in swapper) {
         var replacement = swapper[find]
         outPutText = outPutText.replace(new RegExp(find, 'g'), function (match, index) {
-            r = replacement
+            var r = replacement;
             if (done.indexOf(index) >= 0) {
-                r = find
+                r = find;
             }
-            done.push(index)
-            return r
+            done.push(index);
+            return r;
         })
     }
-    return outPutText
+    return outPutText;
 }
 
 String.prototype.shuffle = function(){
-    var that=this.split("");
-    var len = that.length,t,i
+    var that =  this.split("");
+    var len  =  that.length, t, i;
     while(len) {
-        i=Math.random()*len-- |0;
-        t=that[len],that[len]=that[i],that[i]=t;
+        i = Math.random()*len-- || 0;
+        t = that[len];
+        that[len] = that[i];
+        that[i] = t;
     }
     return that.join("");
 }
@@ -39,7 +41,7 @@ function getRandomInt(min, max) {
 }
 
 // start swap characters
-swapLettersLight = {
+var swapLettersLight = {
     'b': "d",
     'd': "b",
     'p': 'q',
@@ -48,7 +50,7 @@ swapLettersLight = {
     'w': 'm'
 }
 
-swapLettersHeavy = {
+var swapLettersHeavy = {
     'a' : 'e',
     'e' : 'a',
     'f' : 'v',
@@ -56,20 +58,19 @@ swapLettersHeavy = {
 }
 
 function swapCharacters(intputText, useHeavy) {
+    var swapLetters = {};
     if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLight, swapLettersHeavy)
+        swapLetters = $.extend({}, swapLettersLight, swapLettersHeavy);
     }
     else {
-        swapLetters = $.extend({}, swapLettersLight)
+        swapLetters = $.extend({}, swapLettersLight);
     }
-
-    outputText = intputText.replaceAllWith(swapLetters)
-    return outputText
+    return intputText.replaceAllWith(swapLetters);
 }
 // end swap characters
 
 // start swap tweeklanken
-swapLettersLightTweeKlank = {
+var swapLettersLightTweeKlank = {
     'au': "ua",
     'ou': "uo",
     'ei': "ij",
@@ -78,7 +79,7 @@ swapLettersLightTweeKlank = {
     'ui': "iu",
 }
 
-swapLettersHeavyTweeKlank = {
+var swapLettersHeavyTweeKlank = {
     'au': "ua",
     'ou': "uo",
     'ei': "ij",
@@ -92,20 +93,19 @@ swapLettersHeavyTweeKlank = {
 }
 
 function swapTweeKlank(intputText, useHeavy) {
+    var swapLetters = {};
     if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLightTweeKlank, swapLettersHeavyTweeKlank)
+        swapLetters = $.extend({}, swapLettersLightTweeKlank, swapLettersHeavyTweeKlank);
     }
     else {
-        swapLetters = $.extend({}, swapLettersLightTweeKlank)
+        swapLetters = $.extend({}, swapLettersLightTweeKlank);
     }
-
-    outputText = intputText.replaceAllWith(swapLetters)
-    return outputText
+    return intputText.replaceAllWith(swapLetters);
 }
 // end swap tweeklanken
 
 // start swap double characters
-swapLettersLightDubbeleLetters = {
+var swapLettersLightDubbeleLetters = {
     'a': "aa",
     'b': "bb",
     'c': "cc",
@@ -118,7 +118,7 @@ swapLettersLightDubbeleLetters = {
 
 }
 
-swapLettersHeavyDubbeleLetters = {
+var swapLettersHeavyDubbeleLetters = {
     'a': "aaaa",
     'b': "bbbb",
     'c': "cccc",
@@ -136,22 +136,21 @@ swapLettersHeavyDubbeleLetters = {
 }
 
 function swapperDubbeleLetters(intputText, useHeavy) {
+    var swapLetters = {};
     if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLightDubbeleLetters, swapLettersHeavyDubbeleLetters)
+        swapLetters = $.extend({}, swapLettersLightDubbeleLetters, swapLettersHeavyDubbeleLetters);
     }
     else {
-        swapLetters = $.extend({}, swapLettersLightDubbeleLetters)
+        swapLetters = $.extend({}, swapLettersLightDubbeleLetters);
     }
-
-    outputText = intputText.replaceAllWith(swapLetters)
-    return outputText
+    return intputText.replaceAllWith(swapLetters);
 }
 // end swap double characters
 
 // start swap whole words
 function swapWords(inputText, swapValue) {
-    outputText = ""
-    elements = inputText.split(" ")
+    var outputText = ""
+    var elements = inputText.split(" ")
     // maxSwaps = elements.length * swapValue
     // for (i=0; i<maxSwaps;i++) {
     //     index1 = getRandomInt(0, elements.length-1)
@@ -161,16 +160,16 @@ function swapWords(inputText, swapValue) {
     //     elements[index1] = w2
     //     elements[index2] = w1
     // }
-    maxWordLength = 10 - 10 * swapValue
-    for (index=0; index<elements.length; index++) {
-      item = elements[index]
+   var maxWordLength = 10 - 10 * swapValue
+    for (index = 0; index < elements.length; index++) {
+      var item = elements[index];
 
       if (item.length > maxWordLength) {
-        elements.splice(index, 1)
-        elements.splice(getRandomInt(0, elements.length-1), 0, item)
+        elements.splice(index, 1);
+        elements.splice(getRandomInt(0, elements.length-1), 0, item);
       }
     }
-    return elements.join(" ")
+    return elements.join(" ");
 }
 // end swap whole words
 
@@ -182,305 +181,298 @@ function spatiesWeg(inputText, swapValue) {
 
 // start swapping inside a word
 function insideWordSwap(inputText, swapValue) {
-    outputText = ""
-    cursor = 0
-    minLength  = 3 + 7 * (1-swapValue)
-    wordsDone = {}
-    wordPattern = /\b(\w+)\b/g
+    var outputText = "";
+    var cursor = 0;
+    var minLength  = 3 + 7 * (1-swapValue);
+    var wordsDone = {};
+    var wordPattern = /\b(\w+)\b/g;
+    var word = "";
     while (match = wordPattern.exec(inputText)) {
-        word = match[0]
+        word = match[0];
+        let result = word;
         if (word.length > minLength ) {
             if (word in wordsDone) {
-                result = wordsDone[word]
+                result = wordsDone[word];
             }
             else {
-                firstLetter = word[0]
-                lastLetter = word[word.length-1]
-                middle = word.substring(1,word.length-1)
-                middle = middle.shuffle()
-                result = firstLetter + middle + lastLetter
+                var firstLetter = word[0];
+                var lastLetter = word[word.length-1];
+                var middle = word.substring(1,word.length-1).shuffle();
+                result = firstLetter + middle + lastLetter;
 
                 if (!(result in wordsDone)) {
-                    wordsDone[word] = result
+                    wordsDone[word] = result;
                 }
             }
         }
-        else {
-            result = word
-        }
-        outputText += inputText.substring(cursor, match.index) + result
-        cursor = match.index + word.length
+        outputText += inputText.substring(cursor, match.index) + result;
+        cursor = match.index + word.length;
     }
 
-    outputText += inputText.substring(cursor, inputText.length )
-    return outputText
+    outputText += inputText.substring(cursor, inputText.length);
+    return outputText;
 }
 // end swapping inside a word
 
 function parseText(inputText) {
-    outputText = inputText
+    var outputText = inputText
 
-    jump = 0
-    jumpWoord = 0
-    tracking = 0
-    trackingWider = 0
-    trackingSmaller = 0
-    slechteLetterHerkenning = 0
-    spiegelSchrift = false
-    ondersteBoven = false
-    lettersDraaien = 0
-    lettersDraaienOnregelmatig = 0
-    spatiesBreed = 0
-    spatiesNauw = 0
-    lettersBeven = 0
-    woordenBeven = 0
-    lettersHorizontaal = 0
-    woordenHorizontaal = 0
-    interlinie = 0
-    interlinieKlein = 0
-    woordenDraaien = 0
+    var jump = 0
+    var jumpWoord = 0
+    var tracking = 0
+    var trackingWider = 0
+    var trackingSmaller = 0
+    var slechteLetterHerkenning = 0
+    var spiegelSchrift = false
+    var ondersteBoven = false
+    var lettersDraaien = 0
+    var lettersDraaienOnregelmatig = 0
+    var spatiesBreed = 0
+    var spatiesNauw = 0
+    var lettersBeven = 0
+    var woordenBeven = 0
+    var lettersHorizontaal = 0
+    var woordenHorizontaal = 0
+    var interlinie = 0
+    var interlinieKlein = 0
+    var woordenDraaien = 0
 
     $("#controls .checkbox").each(function() {
         if (this.checked) {
-            sliderValue = parseFloat($(this).next().val())
-            varValue = $(this).nextAll('input[type=radio]:checked').val();
+            var sliderValue = parseFloat($(this).next().val());
+            var varValue = $(this).nextAll('input[type=radio]:checked').val();
 
             switch (this.value) {
             // textual changes
                 case "insideWordSwap":
-                    outputText = insideWordSwap(outputText, sliderValue)
+                    outputText = insideWordSwap(outputText, sliderValue);
                     break;
                 case "swapWords":
-                    outputText = swapWords(outputText, sliderValue)
+                    outputText = swapWords(outputText, sliderValue);
                     break;
                 case "swapCharacters":
-                    outputText = swapCharacters(outputText, sliderValue)
+                    outputText = swapCharacters(outputText, sliderValue);
                     break;
                 case "swapTweeKlank":
-                    outputText = swapTweeKlank(outputText, sliderValue)
+                    outputText = swapTweeKlank(outputText, sliderValue);
                     break;
                 case "swapperDubbeleLetters":
-                    outputText = swapperDubbeleLetters(outputText, sliderValue)
+                    outputText = swapperDubbeleLetters(outputText, sliderValue);
                     break;
                 case "spatiesWeg":
-                    outputText = spatiesWeg(outputText, sliderValue)
+                    outputText = spatiesWeg(outputText, sliderValue);
                     break;
                 // visual changes
                 case "jump":
-                    jump = sliderValue
+                    jump = sliderValue;
                     break;
                 case "jumpWoord":
-                    jumpWoord = sliderValue
+                    jumpWoord = sliderValue;
                     break;
                 case "tracking":
-                    tracking = sliderValue
+                    tracking = sliderValue;
                     break;
         				case "trackingWider":
-                    trackingWider = sliderValue
+                    trackingWider = sliderValue;
         					  break;
         				case "trackingSmaller":
-        					  trackingSmaller = sliderValue
+        					  trackingSmaller = sliderValue;
         					  break;
         				case "slechteLetterHerkenning":
-        					  slechteLetterHerkenning = varValue
+        					  slechteLetterHerkenning = varValue;
         					  break;
                 case "spiegelSchrift":
-                    spiegelSchrift = true
+                    spiegelSchrift = true;
                     break;
                 case "ondersteBoven":
-                    ondersteBoven = true
+                    ondersteBoven = true;
                     break;
                 case "lettersDraaien":
-                    lettersDraaien = sliderValue
+                    lettersDraaien = sliderValue;
                     break;
                 case "lettersDraaienOnregelmatig":
-                    lettersDraaienOnregelmatig = sliderValue
+                    lettersDraaienOnregelmatig = sliderValue;
                     break;
                 case "spatiesBreed":
-                    spatiesBreed = sliderValue
+                    spatiesBreed = sliderValue;
                     break;
                 case "spatiesNauw":
-                    spatiesNauw = sliderValue
+                    spatiesNauw = sliderValue;
                     break;
                 case "lettersBeven":
-                    lettersBeven = sliderValue
+                    lettersBeven = sliderValue;
                     break;
                 case "woordenBeven":
-                    woordenBeven = sliderValue
+                    woordenBeven = sliderValue;
                     break;
                 case "lettersHorizontaal":
-                    lettersHorizontaal = sliderValue
+                    lettersHorizontaal = sliderValue;
                     break;
                 case "woordenHorizontaal":
-                    woordenHorizontaal = sliderValue
+                    woordenHorizontaal = sliderValue;
                     break;
                 case "interlinie":
                     interlinie = sliderValue
                     break;
                 case "interlinieKlein":
-                    interlinieKlein = sliderValue
+                    interlinieKlein = sliderValue;
                     break;
                case "woordenDraaien":
-                    woordenDraaien = sliderValue
+                    woordenDraaien = sliderValue;
                     break;
                default:
                    break;
-
                 }
           }
-    })
+    });
 
-    beginWoord = "NEWWORD"
+    var beginWoord = "NEWWORD";
 
     outputText = outputText.replace(/\S|\s/g, function (match) {
-        style = ''
-        clss = 'letter'
-        letterSpacing = Math.random() * tracking + trackingWider - trackingSmaller
-        interlinieValue = 1 + 10 * (interlinie - interlinieKlein) * 10
+        var style = '';
+        var clss = 'letter';
+        var letterSpacing = Math.random() * tracking + trackingWider - trackingSmaller;
+        var interlinieValue = 1 + 10 * (interlinie - interlinieKlein) * 10;
 
         if ((spatiesBreed || spatiesNauw) && match == " ") {
-           letterSpacing = spatiesBreed - spatiesNauw
+           letterSpacing = spatiesBreed - spatiesNauw;
         }
 
         style += "letter-spacing:" + letterSpacing +"em;"
-        style += "margin-bottom:" + interlinieValue + "px;"
-        style += "display:" + "inline-block;"
+        style += "margin-bottom:" + interlinieValue + "px;";
+        style += "display:" + "inline-block;";
 
         if (jump) {
-            style += "position:relative;top:-" + Math.random() * jump +"em;"
+            style += "position:relative;top:-" + Math.random() * jump +"em;";
         }
 
         if (spiegelSchrift || lettersDraaien || lettersDraaienOnregelmatig || ondersteBoven || lettersBeven || lettersHorizontaal) {
            if (match != " ") {
-             style += "display:inline-block;"
+             style += "display:inline-block;";
         }
 
         if (spiegelSchrift || lettersDraaien || lettersDraaienOnregelmatig || ondersteBoven || lettersBeven || lettersHorizontaal) {
-             transformStyle = ''
+             var transformStyle = '';
 
              if (lettersDraaien) {
-                letterAngle = lettersDraaien * 40
-                transformStyle += "rotate(" + letterAngle + "deg)"
+                transformStyle += "rotate(" + lettersDraaien * 40 + "deg)";
              }
 
              if (lettersDraaienOnregelmatig) {
-                letterAngle = lettersDraaienOnregelmatig * 20 * (Math.random() - .5)
-                transformStyle += "rotate(" + letterAngle + "deg)"
+                transformStyle += "rotate(" + lettersDraaienOnregelmatig * 20 * (Math.random() - .5) + "deg)";
              }
 
              if (lettersBeven) {
-               x = lettersBeven * 20 * (Math.random() - .5)
-               y = lettersBeven * 20 * (Math.random() - .5)
-               transformStyle += "translate(" + x + "px," + y + "px)"
+               var x = lettersBeven * 20 * (Math.random() - .5);
+               var y = lettersBeven * 20 * (Math.random() - .5);
+               transformStyle += "translate(" + x + "px," + y + "px)";
              }
 
              if (lettersHorizontaal) {
-               x = lettersHorizontaal * 20 * (Math.random() - .5)
-               y = 0
-               transformStyle += "translate(" + x + "px," + y + "px)"
+               var x = lettersHorizontaal * 20 * (Math.random() - .5);
+               var y = 0;
+               transformStyle += "translate(" + x + "px," + y + "px)";
              }
 
              if (spiegelSchrift) {
-                 transformStyle += "scale(-1, 1) "
+                 transformStyle += "scale(-1, 1) ";
              }
 
              if (ondersteBoven) {
-                transformStyle += "scale(1, -1) "
+                transformStyle += "scale(1, -1) ";
              }
 
-             style += "transform: " + transformStyle + ";"
+             style += "transform: " + transformStyle + ";";
            }
         }
 
         // samen plakken van all styles
         if (style) {
-            style = " style='" + style + "'"
+            style = " style='" + style + "'";
         }
         // samen plakken van alle classes
         if (clss) {
-            clss = " class='" + clss + "'"
+            clss = " class='" + clss + "'";
         }
 
         if (match == " ") {
-            match = "&nbsp;"
-            beginWoord = "</span>"
+            match = "&nbsp;";
+            beginWoord = "</span>";
         }
 
         if (match == "\r" || match == "\n") {
-          beginWoord = "</span>"
+          beginWoord = "</span>";
         }
 
         if (beginWoord == "NEWWORD") {
-          wordStyle = ''
+          var wordStyle = '';
 
           // als woorden draaien of boven of horizontaal beven dan...
           if (woordenDraaien || woordenBeven || woordenHorizontaal) {
-            woordTransformStyle = ""
-            //
+            var woordTransformStyle = "";
+
             if (woordenDraaien) {
-              woordAngle = woordenDraaien * 20 * (Math.random() - .5)
-              woordTransformStyle += "rotate(" + woordAngle + "deg)"
+              woordTransformStyle += "rotate(" + woordenDraaien * 20 * (Math.random() - .5) + "deg)";
             }
 
             if (woordenBeven) {
-              x = woordenBeven * 20 * (Math.random() - .5)
-              y = woordenBeven * 20 * (Math.random() - .5)
-              woordTransformStyle += "translate(" + x + "px," + y + "px)"
+              var x = woordenBeven * 20 * (Math.random() - .5);
+              var y = woordenBeven * 20 * (Math.random() - .5);
+              woordTransformStyle += "translate(" + x + "px," + y + "px)";
             }
 
             if (woordenHorizontaal) {
-              x = woordenHorizontaal * 20 * (Math.random() - .5)
-              y = 0
-              woordTransformStyle += "translate(" + x + "px," + y + "px)"
+              var x = woordenHorizontaal * 20 * (Math.random() - .5);
+              var y = 0;
+              woordTransformStyle += "translate(" + x + "px," + y + "px)";
             }
 
-            wordStyle += "transform: " + woordTransformStyle + ";"
+            wordStyle += "transform: " + woordTransformStyle + ";";
           }
 
           if (jumpWoord) {
-            wordStyle += "position:relative;top:-" + Math.random() * jumpWoord +"em;"
+            wordStyle += "position:relative;top:-" + Math.random() * jumpWoord +"em;";
           }
 
           if (wordStyle) {
-            wordStyle = " style='" + wordStyle + "'"
+            wordStyle = " style='" + wordStyle + "'";
           }
 
-          beginWoord = "<span class='woord'" + wordStyle + ">"
+          beginWoord = "<span class='woord'" + wordStyle + ">";
         }
 
-        result = beginWoord + '<span' + clss + style + '>' + match + '</span>'
+        var result = beginWoord + '<span' + clss + style + '>' + match + '</span>';
 
         if (beginWoord == "</span>") {
-          beginWoord = "NEWWORD"
+          beginWoord = "NEWWORD";
         }
         else {
-          beginWoord = ""
+          beginWoord = "";
         }
 
-        return result
+        return result;
     })
     outputText = outputText.replace(/\r?\n/g, '<br>')
 
-  output = $("#output")
+  var output = $("#output");
 
 
   if (slechteLetterHerkenning) {
-      output.typer([outputText], options={endless:false, duration: 800  * slechteLetterHerkenning})
+      output.typer([outputText], options={endless:false, duration: 800  * slechteLetterHerkenning});
   }
   else {
-      output.html(outputText)
+      output.html(outputText);
   }
-
 }
 
 $(document).ready(function() {
     $("#controls").on("change input", function () {
-        parseText($("#input").val())
+        parseText($("#input").val());
     });
 
     $("#fonts").on("change", function () {
-      font = $(this).val()
-      body = $(".inAndOutputWrapper")
-      body.css("font-family", font)
+      font = $(this).val();
+      body = $(".inAndOutputWrapper");
+      body.css("font-family", font);
     });
 })
