@@ -47,6 +47,15 @@ a:hover {
   line-height: 1.2em;
   padding-right: 20px;
   overflow: auto;
+  border-collapse: collapse;
+  border-left: 1px solid #f7f7f7;
+  background-color: #fdfcfc;
+}
+
+@media (max-width: 950px) {
+  .fieldsetsWrapper {
+    font-size: 1.2em;
+  }
 }
 
 .inAndOutputWrapper {
@@ -94,22 +103,34 @@ a:hover {
 
 h2.reset-link {
   padding-top: 0;
+  font-size: 0.8em;
+  width: 80%;
+  text-align: right;
+  padding: 0;
 }
 h2.font-title {
   padding-bottom: 0;
 }
 
 .fieldsets #fonts{
-  border: none;
+  border: 1px solid #e6e6e6;
   background: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 0;
-  margin: 0;
+  padding: 5px;
+  margin: 0 0 0 20px;
+  display: inline-block;
+  font-size: 0.8em;
+  outline: none;
+  width: 80%;
 }
 
 fieldset div {
   line-height: 1.7em;
+}
+
+.select-wrapper {
+    font-size: 1.4em;
 }
 
 .select-wrapper:after {
