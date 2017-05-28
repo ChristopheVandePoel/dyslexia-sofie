@@ -1,5 +1,4 @@
 function toggleSlider(element) {
-  console.log($('#' + element.value), element.checked);
   $('#' + element.value).css('display', (element.checked) ? 'block' : 'none');
 }
 
@@ -11,7 +10,6 @@ function clickedCheckbox(element) {
 // so you don't have to do it manually when adding one
 function setCountingLabels() {
     $('label').each(function (i, element) {
-        console.log(element.innerHTML);
         $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
     })
 }
@@ -224,28 +222,31 @@ function insideWordSwap(inputText, swapValue) {
 }
 // end swapping inside a word
 
-function parseText(inputText) {
-    var outputText = inputText
+var isTyping = false;
+var timing = 0;
 
-    var jump = 0
-    var jumpWoord = 0
-    var tracking = 0
-    var trackingWider = 0
-    var trackingSmaller = 0
-    var slechteLetterHerkenning = 0
-    var spiegelSchrift = false
-    var ondersteBoven = false
-    var lettersDraaien = 0
-    var lettersDraaienOnregelmatig = 0
-    var spatiesBreed = 0
-    var spatiesNauw = 0
-    var lettersBeven = 0
-    var woordenBeven = 0
-    var lettersHorizontaal = 0
-    var woordenHorizontaal = 0
-    var interlinie = 0
-    var interlinieKlein = 0
-    var woordenDraaien = 0
+function parseText(inputText) {
+    var outputText = inputText;
+
+    var jump = 0;
+    var jumpWoord = 0;
+    var tracking = 0;
+    var trackingWider = 0;
+    var trackingSmaller = 0;
+    var slechteLetterHerkenning = 0;
+    var spiegelSchrift = false;
+    var ondersteBoven = false;
+    var lettersDraaien = 0;
+    var lettersDraaienOnregelmatig = 0;
+    var spatiesBreed = 0;
+    var spatiesNauw = 0;
+    var lettersBeven = 0;
+    var woordenBeven = 0;
+    var lettersHorizontaal = 0;
+    var woordenHorizontaal = 0;
+    var interlinie = 0;
+    var interlinieKlein = 0;
+    var woordenDraaien = 0;
 
     $("#controls .checkbox").each(function() {
         if (this.checked) {
@@ -465,11 +466,22 @@ function parseText(inputText) {
 
   var output = $("#output");
 
-
   if (slechteLetterHerkenning) {
-      output.typer([outputText], options={endless:false, duration: 800  * slechteLetterHerkenning});
+      console.log(isTyping);
+      if(!isTyping) {
+        isTyping = true;
+      } else {
+          clearTimeout(timing);
+      }
+      output.typer([outputText], options={endless:false, duration: 100  * slechteLetterHerkenning, onType: function(timer){
+        //console.log(timer);
+        timing = timer;
+        }});
   }
   else {
+      clearTimeout(timing);
+      console.log('changed and typing?', isTyping);
+      isTyping = false;
       output.html(outputText);
   }
 }

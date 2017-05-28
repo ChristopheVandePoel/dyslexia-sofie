@@ -10,7 +10,7 @@
     $.fn.typer = function(text, options){
         options = $.extend({}, {
             char: '',
-            delay: 2000,
+            delay: 1000,
             duration: 600,
             endless: true,
             onType: $.noop,
@@ -25,16 +25,20 @@
             var elem = $(this),
                 isVal = {input:1, textarea:1}[this.tagName.toLowerCase()],
                 isTag = false,
-                timer,
+                timer = 0,
                 c = 0;
 
             (function typetext(i) {
                 var e = ({string:1, number:1}[typeof text] ? text : text[i]) + '',
                     char = e.substr(c++, 1);
 
-                if( char === '<' ){ isTag = true; }
+                if( char === '<' ){
+                    isTag = true;
+                }
+
                 if( char === '>' ){ isTag = false; }
-                elem[isVal ? "val" : "html"](e.substr(0, c) + ($.isFunction(options.char) ? options.char() : options.char || ' '));
+                elem[isVal ? "val" : "html"](e.substr(0, c + (e.substr(c).indexOf(">") + 1)) + ($.isFunction(options.char) ? options.char() : options.char || ' '));
+                c =  c + e.substr(c).indexOf(">");
                 if(c <= e.length){
                     if( isTag ){
                         typetext(i);
@@ -53,7 +57,8 @@
                     }
                     timer = setTimeout(typetext, options.delay, i);
                     if(i === text.length - 1) options.afterAll(timer);
-                    options.afterPhrase(timer);
+                    clearTimeout(timer);
+                    timer = 0;
                 }
             })(0);
         });
