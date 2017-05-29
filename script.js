@@ -1,5 +1,8 @@
 function toggleSlider(element) {
   $('#' + element.value).css('display', (element.checked) ? 'block' : 'none');
+  if($('.' + element.value).length > 0) {
+      $('.' + element.value).css('display', (element.checked) ? 'inline-block' : 'none');
+  }
 }
 
 function clickedCheckbox(element) {
@@ -10,7 +13,9 @@ function clickedCheckbox(element) {
 // so you don't have to do it manually when adding one
 function setCountingLabels() {
     $('label').each(function (i, element) {
-        $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
+        if(!element.id) {
+            $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
+        }
     })
 }
 
@@ -488,6 +493,9 @@ function parseText(inputText) {
 
 $(document).ready(function() {
     $("#controls").on("change input", function () {
+        parseText($("#input").val());
+    });
+    $("#radio-controls").on("change input", function () {
         parseText($("#input").val());
     });
 

@@ -147,7 +147,7 @@ fieldset div {
   color: blue;
 }
 
-.slider.hidden-slider {
+.slider.hidden-slider, .varValueRadio.hidden-radio, .slechteLetterHerkenning {
   display: none;
 }
 
@@ -169,6 +169,10 @@ label:hover{
 
 .hidden-checkbox:checked + label {
   color: steelblue;
+}
+
+input[type="radio"].slechteLetterHerkenning{
+  margin-left: 50px;
 }
 
 /* RANGE SLIDER STYLES */

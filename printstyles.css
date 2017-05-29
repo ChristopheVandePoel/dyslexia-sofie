@@ -1,93 +1,9 @@
-body, html {
-    margin: 10;
-    font-family: Helvetica;
-    font-style: normal;
-    font-size: 10pt;
-  }
-
-a {
-  color:#000;
-}
-
-h1 {
-    margin-bottom: 20px;
-  }
-
-.hide {
-  display: none;
-}
-
-#controls .fieldsets {
-  float: left;
-  width: 20%;
-  height: 100%;
-  border-right: 2px solid black;
-  overflow-y: scroll!important;
-  display: none;
-
-}
-
-fieldset {
-  border: none;
-  font-family: Helvetica;
-  font-style: normal;
-  font-size: 10pt;
-  display: none;
-}
-
-#controls .fieldsets fieldset p {
-  font-size: 12px;
-  display: none;
-}
-
-#controls  textarea {
-  font-size: 16px;
-  color: black;
-  display: none;
-}
-
-legend {
-  color: black;
-  cursor: pointer;
-  font-family: Helvetica;
-  font-style: normal;
-  font-size: 12pt;
-  display: none;
-}
-
-#input  {
-  float: left;
-  width: 35%;
-  height: 100%;
-  border: none;
-  border-right: 2px solid black;
-  padding: 20px;
-  font-family: Helvetica;
-  font-size: normal;
-  font-size: 12pt;
-  outline: none;
-  display: none;
-}
-
-#output {
-  float: none;
-  width: 100%;
-  overflow: scroll!important;
-  padding: 20px;
-  font-family: Helvetica;
-  font-size: 12pt;
-  height: 100%;
-  word-wrap: break-word!important;
-}
-
-
-
-.slider {
-  display: none;
-}
-
 @media print {
-  .fieldsets {
+  .fieldsets, .fieldsetsWrapper, .InputWrapper, .nav {
     display: none;
+  }
+  #output, .inAndOutputWrapper, .OutputWrapper {
+    display: block;
+    width: 100%;
   }
 }
