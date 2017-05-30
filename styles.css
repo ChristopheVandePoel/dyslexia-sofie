@@ -1,172 +1,264 @@
 @import "fonts.css";
 
+
+/* GENERAL LAYOUT */
 body, html {
-    margin: 0;
     font-family: Helvetica;
     font-style: normal;
     font-size: 8pt;
   }
 
-a {
-  color:#000;
+.nav a {
+  text-decoration: none;
+  color: black;
+  padding-left: 5px;
 }
 
-h1 {
-    margin-bottom: 20px;
-  }
-
-.hide {
-  display: none;
+a:hover {
+  color: blue;
 }
-
-.bodyWrapper {
-  padding:  20px;
-  padding-right: 5px;
-}
-
-/* navigatie */
 
 .nav {
-  background-color: #fff;
-  padding: 15px;
-  height: 1em;
-  border-bottom: 2px solid #000;
-  width: 95%;
-  margin-left: 15px;
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: block;
+    background-color: none;
+    letter-spacing: 5px;
+    font-size: 1.2em;
+    flex: 0;
 }
 
 .nav li {
-  width: 33%;
-  float: left;
+  display: inline-block;
+  padding: 20px;
 }
 
-.nav .right {
-  text-align: right;
+.bodyWrapper {
+  flex: 1;
+  display: flex;
 }
 
-.nav .center {
-  text-align: center;
+#controls {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
 }
-
-/* parameters */
 
 .fieldsetsWrapper {
-  float: right;
-  width: 15%;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  padding-right: 20px;
+  overflow: auto;
+  border-collapse: collapse;
+  border-left: 1px solid #f7f7f7;
+  background-color: #fdfcfc;
 }
 
-#controls .fieldsets {
-
-  height: 100%;
-  border-left: 1px solid black;
-  overflow-y: scroll!important;
+@media (max-width: 950px) {
+  .fieldsetsWrapper {
+    font-size: 1.2em;
+  }
 }
 
 .inAndOutputWrapper {
-  float: left;
-  width: 84%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 
-fieldset {
-  border: none;
-  font-style: normal;
-  font-size: 10pt;
-}
-
-#controls .fieldsets fieldset p {
-  font-size: 14px;
-}
-
-#controls  textarea {
-  font-size: 16px;
-  color: black;
-}
-
-legend {
-  color: black;
-  cursor: pointer;
-  font-style: normal;
-  font-size: 12pt;
-}
-
-#input  {
-  float: left;
+.InputWrapper, .OutputWrapper {
   width: 50%;
-  height: 100%;
-  border: none;
-  font-family: inherit;
-  border-right: 2px solid black;
-  padding: 20px;
-  padding-top: 0;
-  font-size: normal;
-  font-size: 12pt;
+  flex: 1;
   outline: none;
-}
-
-.OutputWrapper {
-  float: left;
-  width: 50%;
+  padding: 50px;
+  padding-top: 0;
+  font: inherit;
+  font-size: 1.5em;
+  line-height: 1.5em;
 }
 
 #output {
-  /*width: 100%;*/
-  overflow: scroll!important;
-  padding: 20px;
-  padding-top: 50px;
-  margin-top: -50px;
-  font-size: 12pt;
-  height: 100%;
-  word-wrap: break-word!important;
+  word-wrap: break-word;
 }
 
-.woord {
-  display: inline-block;
+.InputWrapper {
+  border: 0;
+  border-right: 1px solid black;
 }
 
-.slider {
-  display: block;
-}
-.slider.hidden-slider {
-  display: none;
+.OutputWrapper {
+  overflow: auto;
 }
 
-.checkbox.hidden-checkbox {
-  display: none;
+.body-flex {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-label:hover {
-  cursor: pointer;
-  color: tomato;
+
+/*CONTROLS*/
+
+.fieldsets h2 {
+  text-transform: uppercase;
+  padding: 10px 0 10px 50px;
 }
 
-/* select dropdown menu */
+h2.reset-link {
+  padding-top: 0;
+  font-size: 0.8em;
+  width: 80%;
+  text-align: right;
+  padding: 0;
+}
+h2.font-title {
+  padding-bottom: 0;
+}
 
-#fonts {
-  border: none;
+.fieldsets #fonts{
+  border: 1px solid #e6e6e6;
   background: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  padding: 0;
-  margin: 0;
-  padding-right: 20px;
+  padding: 5px;
+  margin: 0 0 0 20px;
+  display: inline-block;
+  font-size: 0.8em;
+  outline: none;
+  width: 80%;
+}
+
+fieldset div {
+  line-height: 1.7em;
+}
+
+.select-wrapper {
+    font-size: 1.4em;
 }
 
 .select-wrapper:after {
   content: "↓";
-  left: -30px;
-  position: relative;
   font-size: 80%;
 }
 
-@media print {
-  .fieldsets {
-    display: none;
-  }
+.fieldsets a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fieldsets a:hover {
+  color: blue;
+}
+
+.slider.hidden-slider, .varValueRadio.hidden-radio, .slechteLetterHerkenning {
+  display: none;
+}
+
+.hidden-checkbox {
+  display: none;
+}
+
+.indice-span {
+  width: 50px;
+  display: inline-block;
+  text-align: right;
+  margin-right: 25px;
+}
+
+label:hover{
+  color: blue;
+  cursor: pointer;
+}
+
+.hidden-checkbox:checked + label {
+  color: steelblue;
+}
+
+input[type="radio"].slechteLetterHerkenning{
+  margin-left: 50px;
+}
+
+/* RANGE SLIDER STYLES */
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+/* SLIDER */
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #f1f1f1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+  margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #f1f1f1;
+}
+
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #f1f1f1;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #000000;
+  height: 15px;
+  width: 15px;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: #f1f1f1;
+  border-color: white;
+  border-width: 1px 0;
+  color: #f1f1f1;
+}
+input[type=range]::-ms-fill-lower {
+  border: none;
+}
+input[type=range]::-ms-fill-upper {
+  border: none;
+}
+
+input[type=range]::-ms-thumb {
+  border: 1px solid #000000;
+  height: 14px;
+  width: 14px;
+  border-radius: 2px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+
+/* TEXT-FIELDS */
+
+.woord {
+  display: inline-block;
 }

@@ -7,7 +7,7 @@
       <script src="./jquery.typer.js"></script>
       <script src="./script.js"></script>
       <link rel="stylesheet" type="text/css" href="./reset.css"/>
-      <link rel="stylesheet" type="text/css" href="./styles2.css"/>
+      <link rel="stylesheet" type="text/css" href="./styles.css"/>
       <link rel="stylesheet" type="text/css" href="./printstyles.css" media="print"/>
 
   </head>
@@ -16,7 +16,7 @@
       <div class="nav">
         <ul>
           <li class="right">
-            <a href="#">NEDERLANDS</a> <a href="#">ENGELS</a>
+            <a href="./index.html">DUTCH</a> <a href="./index-en.html">ENGLISH</a>
           </li>
       </ul>
     </div><!-- nav -->
@@ -34,156 +34,165 @@
         <div class="fieldsetsWrapper">
           <div class="fieldsets">
             <fieldset>
+              <h2>Textual changes</h2>
               <div class="select-wrapper">
                 <select id="fonts">
-                  <option value="Helvetica">Lettertype</option>
+                  <option value="Helvetica">Font</option>
+                  <option value="Akzidenz-Grotesk BQ">Akzidenz-Grotesk</option>
+                  <option value="Avenir">Avenir</option>
+                  <option value="Baskerville">Baskerville</option>
+                  <option value="Bodoni Std">Bodoni</option>
+                  <option value="Big Calson">Calson</option>
+                  <option value="Courier">Courier</option>
+                  <option value="Futura">Futura</option>
+                  <option value="Garamond">Garamond</option>
+                  <option value="Gill Sans">Gill Sans</option>
+                  <option value="Helvetica">Helvetica</option>
+                  <option value="Lucida Sans Std">Lucida</option>
                   <option value="Times">Times</option>
-                  <option value="Times-Italic">Times Italic</option>
-                  <option value="Comic Sans MS">Comic Sans</option>
-                  <option value="Sofie Font">Sofie Font</option>
                 </select>
               </div>
-              <h2 class="reset-link"><a href="index2.html">reset</a></h2>
-              <h2>Textuele veranderingen</h2>
+              <h2 class="reset-link"><a href="index-en.html">Reset</a></h2>
+              <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
               <div>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="insideWordSwap" onclick="clickedCheckbox(this)" id="insideWordSwap-check">
-                    <label for="insideWordSwap-check">Verspringen in woorden</label>
+                    <label for="insideWordSwap-check">Bursting letters in a word</label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="insideWordSwap"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapWords" onclick="clickedCheckbox(this)" id="swapWords-check">
-                    <label for="swapWords-check">Verwisselen van woorden</label>
+                    <label for="swapWords-check">The shifting of words</label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapWords"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapCharacters" onclick="clickedCheckbox(this)" id="swapCharacters-check">
-                    <label for="swapCharacters-check">Verwisselen van klanken</label>
+                    <label for="swapCharacters-check">The swapping of vowels</label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapCharacters"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapTweeKlank" onclick="clickedCheckbox(this)" id="swapTweeKlank-check">
-                    <label for="swapTweeKlank-check">Verwisselen van tweeklanken</label>
+                    <label for="swapTweeKlank-check">The swapping of dipthong</label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapTweeKlank"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapperDubbeleLetters" onclick="clickedCheckbox(this)" id="swapperDubbeleLetters-check">
-                    <label for="swapperDubbeleLetters-check">Dubbele letters</label>
+                    <label for="swapperDubbeleLetters-check">The repetition of letters</label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapperDubbeleLetters"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="spiegelSchrift" onclick="clickedCheckbox(this)" id="spiegelSchrift-check">
-                    <label for="spiegelSchrift-check">Spiegelschrift</label>
+                    <label for="spiegelSchrift-check">Placing the letters backwards</label>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="ondersteBoven" onclick="clickedCheckbox(this)" id="ondersteBoven-check">
-                    <label for="ondersteBoven-check">Ondersteboven</label>
+                    <label for="ondersteBoven-check">Placing the letters upside-down</label>
                 </p>
               </div>
             </fieldset>
 
             <fieldset>
-              <h2>Visuele veranderingen</h2>
+              <h2>Visual changes</h2>
               <div>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jump" onclick="clickedCheckbox(this)" id="jump-check">
-                  <label for="jump-check">Dansende letters</label>
+                    <label for="jump-check">The hopping of letters</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jump"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jumpWoord" onclick="clickedCheckbox(this)" id="jumpWoord-check">
-                  <label for="jumpWoord-check">Dansende woorden</label>
+                    <label for="jumpWoord-check">The hopping of words</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jumpWoord"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingWider" onclick="clickedCheckbox(this)" id="trackingWider-check">
-                  <label for="trackingWider-check">Spatiering breder</label>
+                    <label for="trackingWider-check">A wider tracking</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingWider"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingSmaller" onclick="clickedCheckbox(this)" id="trackingSmaller-check">
-                  <label for="trackingSmaller-check">Spatiering nauwer</label>
+                    <label for="trackingSmaller-check">A narrow tracking</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingSmaller"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="tracking" onclick="clickedCheckbox(this)" id="tracking-check">
-                  <label for="tracking-check">Spatiering onregelmatig</label>
+                    <label for="tracking-check">An atypical tracking</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="tracking"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesBreed" onclick="clickedCheckbox(this)" id="spatiesBreed-check">
-                  <label for="spatiesBreed-check">Spaties breder</label>
+                    <label for="spatiesBreed-check">A wide space</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesBreed"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesNauw" onclick="clickedCheckbox(this)" id="spatiesNauw-check">
-                  <label for="spatiesNauw-check">Spaties nauwer</label>
+                    <label for="spatiesNauw-check">A close space</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesNauw"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesWeg" onclick="clickedCheckbox(this)" id="spatiesWeg-check">
-                  <label for="spatiesWeg-check">Spaties weg</label>
+                    <label for="spatiesWeg-check">A missing space</label>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinie" onclick="clickedCheckbox(this)" id="interlinie-check">
-                  <label for="interlinie-check">Interlinie groot</label>
+                    <label for="interlinie-check">A wide line-spacing</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinie"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinieKlein" onclick="clickedCheckbox(this)" id="interlinieKlein-check">
-                  <label for="interlinieKlein-check">Interlinie klein</label>
+                    <label for="interlinieKlein-check">A close line-spacing</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinieKlein"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaien" onclick="clickedCheckbox(this)" id="lettersDraaien-check">
-                  <label for="lettersDraaien-check">Letters draaien regelmatig</label>
+                    <label for="lettersDraaien-check">The unalterable rotation of letters</label>
                   <input class="slider hidden-slider" type="range" min="-1" max="1" step=".01" id="lettersDraaien"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaienOnregelmatig" onclick="clickedCheckbox(this)" id="lettersDraaienOnregelmatig-check">
-                  <label for="lettersDraaienOnregelmatig-check">Letters draaien onregelmatig</label>
+                    <label for="lettersDraaienOnregelmatig-check">The alterable rotation of letters</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersDraaienOnregelmatig"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersHorizontaal" onclick="clickedCheckbox(this)" id="lettersHorizontaal-check">
-                  <label for="lettersHorizontaal-check">Letters beven horizontaal</label>
+                    <label for="lettersHorizontaal-check">The trembling of letters</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersHorizontaal"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenHorizontaal" onclick="clickedCheckbox(this)" id="woordenHorizontaal-check">
-                  <label for="woordenHorizontaal-check">Woorden beven horizontaal</label>
+                    <label for="woordenHorizontaal-check">The trembling of words</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="woordenHorizontaal"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersBeven" onclick="clickedCheckbox(this)" id="lettersBeven-check">
-                  <label for="lettersBeven-check">Letters beven</label>
+                    <label for="lettersBeven-check">The letters tremble widely</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersBeven"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenBeven" onclick="clickedCheckbox(this)" id="woordenBeven-check">
-                  <label for="woordenBeven-check">Woorden beven</label>
+                    <label for="woordenBeven-check">The words tremble widely</label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="woordenBeven"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenDraaien" onclick="clickedCheckbox(this)" id="woordenDraaien-check">
-                  <label for="woordenDraaien-check">Woorden kantelen</label>
+                    <label for="woordenDraaien-check">Tipping of words</label>
                   <input class="slider hidden-slider" type="range" value=0 min="0" max="1" step=".01" id="woordenDraaien"/>
                 </p>
             </div>
           </fieldset>
 
           <fieldset>
-            <h2>Animaties</h2>
+            <h2>Animations</h2>
             <div>
               <p>
                 <input class="checkbox hidden-checkbox" type="checkbox" value="slechteLetterHerkenning" onclick="clickedCheckbox(this)" id="slechteLetterHerkenning-check">
-                <label for="slechteLetterHerkenning-check">Slechte letterherkenning</label>
+                    <label for="slechteLetterHerkenning-check">A slow letter recognition</label>
                   <br />
                   <input type="radio" name="varValueRadio" class="varValueRadio hidden-radio slechteLetterHerkenning" value="1"  id="radio-1">
-                    <label for="radio-1" class="slechteLetterHerkenning" id="radio-1">Traag</label>
+                    <label for="radio-1" class="slechteLetterHerkenning" id="radio-1">Slow</label>
                   <br />
                   <input type="radio" name="varValueRadio" class="varValueRadio hidden-radio slechteLetterHerkenning" value="0.5" id="radio-2">
-                    <label for="radio-2" class="slechteLetterHerkenning" id="radio-2">Snel</label>
+                    <label for="radio-2" class="slechteLetterHerkenning" id="radio-2">Fast</label>
               </p>
             </div>
           </fieldset>
