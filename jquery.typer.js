@@ -35,7 +35,6 @@
                 if( char === '<' ){
                     isTag = true;
                 }
-
                 if( char === '>' ){ isTag = false; }
                 elem[isVal ? "val" : "html"](e.substr(0, c + (e.substr(c).indexOf(">") + 1)) + ($.isFunction(options.char) ? options.char() : options.char || ' '));
                 c =  c + e.substr(c).indexOf(">");
@@ -43,7 +42,20 @@
                     if( isTag ){
                         typetext(i);
                     } else {
-                        timer = setTimeout(typetext, options.duration/10, i);
+                        var randomSlowDown = 1;
+                        var randomHardSlowDown = (Math.floor(Math.random()*100 % 30) === 0);
+                        var randomMediumSlowDown = (Math.floor(Math.random()*100 % 15) === 0);
+                        var randomSmallSlowDown = (Math.floor(Math.random()*100 % 4) === 0);
+
+                        randomSlowDown = randomSmallSlowDown ? 2 : randomSlowDown;
+                        randomSlowDown = randomMediumSlowDown ? 4 : randomSlowDown;
+                        randomSlowDown = randomHardSlowDown ? 8 : randomSlowDown;
+
+                        var randomNumber = Math.floor((Math.random()*options.duration*randomSlowDown));
+
+                        console.log(randomSlowDown, randomNumber);
+
+                        timer = setTimeout(typetext, randomNumber, i);
                     }
                     options.onType(timer);
                 } else {
@@ -56,7 +68,7 @@
                         i = 0;
                     }
                     timer = setTimeout(typetext, options.delay, i);
-                    if(i === text.length - 1) options.afterAll(timer);
+                    if(i === text.length - 1) clearTimeout(timer);;
                     clearTimeout(timer);
                     timer = 0;
                 }

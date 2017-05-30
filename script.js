@@ -41,7 +41,7 @@ String.prototype.shuffle = function(){
     var that =  this.split("");
     var len  =  that.length, t, i;
     while(len) {
-        i = Math.random()*len-- || 0;
+        i = Math.random()*len-- | 0;
         t = that[len];
         that[len] = that[i];
         that[i] = t;
@@ -199,10 +199,9 @@ function insideWordSwap(inputText, swapValue) {
     var minLength  = 3 + 7 * (1-swapValue);
     var wordsDone = {};
     var wordPattern = /\b(\w+)\b/g;
-    var word = "";
     while (match = wordPattern.exec(inputText)) {
-        word = match[0];
-        let result = word;
+        var word = match[0];
+        var result = word;
         if (word.length > minLength ) {
             if (word in wordsDone) {
                 result = wordsDone[word];
@@ -472,7 +471,6 @@ function parseText(inputText) {
   var output = $("#output");
 
   if (slechteLetterHerkenning) {
-      console.log(isTyping);
       if(!isTyping) {
         isTyping = true;
       } else {
@@ -485,7 +483,6 @@ function parseText(inputText) {
   }
   else {
       clearTimeout(timing);
-      console.log('changed and typing?', isTyping);
       isTyping = false;
       output.html(outputText);
   }
