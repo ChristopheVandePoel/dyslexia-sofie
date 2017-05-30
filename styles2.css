@@ -10,17 +10,17 @@ body, html {
 
 .nav a {
   text-decoration: none;
-  color: white;
+  color: black;
   padding-left: 5px;
 }
 
 a:hover {
-  color: gray;
+  color: blue;
 }
 
 .nav {
     display: block;
-    background-color: #313131;
+    background-color: none;
     letter-spacing: 5px;
     font-size: 1.2em;
     flex: 0;
@@ -80,7 +80,7 @@ a:hover {
 
 .InputWrapper {
   border: 0;
-  border-right: 2px solid black;
+  border-right: 1px solid black;
 }
 
 .OutputWrapper {
