@@ -8,6 +8,15 @@ body, html {
     font-size: 8pt;
   }
 
+
+.body-flex {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+
+
 .nav a {
   text-decoration: none;
   color: black;
@@ -20,10 +29,12 @@ a:hover {
 
 .nav {
     display: block;
-    background-color: none;
+    background-color: transparent;
     letter-spacing: 5px;
     font-size: 1.2em;
     flex: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
 }
 
 .nav li {
@@ -48,8 +59,18 @@ a:hover {
   padding-right: 20px;
   overflow: auto;
   border-collapse: collapse;
-  border-left: 1px solid #f7f7f7;
-  background-color: #fdfcfc;
+  border-left: 1px solid #272727;
+  width: 20%;
+}
+
+.fieldsetsWrapper label {
+  display: flex;
+  padding-bottom: 0.5em;
+  line-height: 1.3em;
+}
+
+.label-text {
+  flex: 1;
 }
 
 @media (max-width: 950px) {
@@ -65,14 +86,14 @@ a:hover {
 }
 
 .InputWrapper, .OutputWrapper {
-  width: 50%;
-  flex: 1;
-  outline: none;
-  padding: 50px;
-  padding-top: 0;
-  font: inherit;
-  font-size: 1.5em;
-  line-height: 1.5em;
+    flex: 1;
+    outline: none;
+    padding: 20px;
+    padding-top: 0;
+    padding-right: 40px;
+    font: inherit;
+    font-size: 1.6em;
+    line-height: 1.2em;
 }
 
 #output {
@@ -81,25 +102,19 @@ a:hover {
 
 .InputWrapper {
   border: 0;
-  border-right: 1px solid black;
+  border-right: 2px solid black;
 }
 
 .OutputWrapper {
   overflow: auto;
 }
 
-.body-flex {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-
 /*CONTROLS*/
 
 .fieldsets h2 {
   text-transform: uppercase;
   padding: 10px 0 10px 50px;
+  display: none;
 }
 
 h2.reset-link {
