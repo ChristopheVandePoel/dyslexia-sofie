@@ -9,6 +9,18 @@ function clickedCheckbox(element) {
   toggleSlider(element);
 }
 
+function checkboxClear() {
+    $.each($('.checkbox'), function(i, element) {
+        $('#' + element.value).css('display', 'none');
+        if ($('.' + element.value).length > 0) {
+            $('.' + element.value).css('display', 'none');
+        }
+        element.checked = false;
+        parseText($("#input").val());
+    });
+
+}
+
 // this function places the correct indice in front of each label in the menu,
 // so you don't have to do it manually when adding one
 function setCountingLabels() {
@@ -17,6 +29,14 @@ function setCountingLabels() {
             $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
         }
     })
+}
+
+function resetLanguage(element, event) {
+    event.preventDefault();
+    checkboxClear();
+    $('#fonts').val('Helvetica');
+    var body = $(".inAndOutputWrapper");
+    body.css("font-family", 'Helvetica');
 }
 
 // some helpers
@@ -415,7 +435,7 @@ function parseText(inputText) {
         }
 
         if (match == "\r" || match == "\n") {
-          beginWoord = "</span>";
+          beginWoord = "</span><br />";
         }
 
         if (beginWoord == "NEWWORD") {

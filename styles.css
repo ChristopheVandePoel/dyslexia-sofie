@@ -107,6 +107,8 @@ a:hover {
 
 .OutputWrapper {
   overflow: auto;
+  padding-top: 20px;
+  margin-top: -20px;
 }
 
 /*CONTROLS*/
@@ -117,12 +119,17 @@ a:hover {
   display: none;
 }
 
+div.font-links {
+  margin-left: 20px;
+}
 h2.reset-link {
   padding-top: 0;
   font-size: 0.8em;
-  width: 80%;
   text-align: right;
   padding: 0;
+  display: inline;
+  text-transform: none;
+  text-decoration: underline;
 }
 h2.font-title {
   padding-bottom: 0;
@@ -163,7 +170,7 @@ fieldset div {
   color: blue;
 }
 
-.slider.hidden-slider, .varValueRadio.hidden-radio, .slechteLetterHerkenning {
+.slider.hidden-slider, .varValueRadio.hidden-radio, label.slechteLetterHerkenning {
   display: none;
 }
 

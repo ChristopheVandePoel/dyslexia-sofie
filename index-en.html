@@ -52,41 +52,43 @@
                   <option value="Times">Times</option>
                 </select>
               </div>
-              <h2 class="reset-link"><a href="index-en.html">Reset</a></h2>
-              <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+              <div class="font-links">
+                <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
+                <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+              </div>
               <div>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="insideWordSwap" onclick="clickedCheckbox(this)" id="insideWordSwap-check">
-                    <label for="insideWordSwap-check">Bursting letters in a word</label>
+                    <label for="insideWordSwap-check"><span class="label-text">Bursting letters in a word</span></label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="insideWordSwap"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapWords" onclick="clickedCheckbox(this)" id="swapWords-check">
-                    <label for="swapWords-check">The shifting of words</label>
+                    <label for="swapWords-check"><span class="label-text">The shifting of words</span></label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapWords"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapCharacters" onclick="clickedCheckbox(this)" id="swapCharacters-check">
-                    <label for="swapCharacters-check">The swapping of vowels</label>
+                    <label for="swapCharacters-check"><span class="label-text">The swapping of vowels</span></label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapCharacters"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapTweeKlank" onclick="clickedCheckbox(this)" id="swapTweeKlank-check">
-                    <label for="swapTweeKlank-check">The swapping of dipthong</label>
+                    <label for="swapTweeKlank-check"><span class="label-text">The swapping of dipthong</span></label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapTweeKlank"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="swapperDubbeleLetters" onclick="clickedCheckbox(this)" id="swapperDubbeleLetters-check">
-                    <label for="swapperDubbeleLetters-check">The repetition of letters</label>
+                    <label for="swapperDubbeleLetters-check"><span class="label-text">The repetition of letters</span></label>
                     <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="swapperDubbeleLetters"/>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="spiegelSchrift" onclick="clickedCheckbox(this)" id="spiegelSchrift-check">
-                    <label for="spiegelSchrift-check">Placing the letters backwards</label>
+                    <label for="spiegelSchrift-check"><span class="label-text">Placing the letters backwards</span></label>
                 </p>
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="ondersteBoven" onclick="clickedCheckbox(this)" id="ondersteBoven-check">
-                    <label for="ondersteBoven-check">Placing the letters upside-down</label>
+                    <label for="ondersteBoven-check"><span class="label-text">Placing the letters upside-down</span></label>
                 </p>
               </div>
             </fieldset>
@@ -96,86 +98,86 @@
               <div>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jump" onclick="clickedCheckbox(this)" id="jump-check">
-                    <label for="jump-check">The hopping of letters</label>
+                    <label for="jump-check"><span class="label-text">The hopping of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jump"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jumpWoord" onclick="clickedCheckbox(this)" id="jumpWoord-check">
-                    <label for="jumpWoord-check">The hopping of words</label>
+                    <label for="jumpWoord-check"><span class="label-text">The hopping of words</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jumpWoord"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingWider" onclick="clickedCheckbox(this)" id="trackingWider-check">
-                    <label for="trackingWider-check">A wider tracking</label>
+                    <label for="trackingWider-check"><span class="label-text">A wider tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingWider"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingSmaller" onclick="clickedCheckbox(this)" id="trackingSmaller-check">
-                    <label for="trackingSmaller-check">A narrow tracking</label>
+                    <label for="trackingSmaller-check"><span class="label-text">A narrow tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingSmaller"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="tracking" onclick="clickedCheckbox(this)" id="tracking-check">
-                    <label for="tracking-check">An atypical tracking</label>
+                    <label for="tracking-check"><span class="label-text">An atypical tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="tracking"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesBreed" onclick="clickedCheckbox(this)" id="spatiesBreed-check">
-                    <label for="spatiesBreed-check">A wide space</label>
+                    <label for="spatiesBreed-check"><span class="label-text">A wide space</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesBreed"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesNauw" onclick="clickedCheckbox(this)" id="spatiesNauw-check">
-                    <label for="spatiesNauw-check">A close space</label>
+                    <label for="spatiesNauw-check"><span class="label-text">A close space</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesNauw"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesWeg" onclick="clickedCheckbox(this)" id="spatiesWeg-check">
-                    <label for="spatiesWeg-check">A missing space</label>
+                    <label for="spatiesWeg-check"><span class="label-text">A missing space</span></label>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinie" onclick="clickedCheckbox(this)" id="interlinie-check">
-                    <label for="interlinie-check">A wide line-spacing</label>
+                    <label for="interlinie-check"><span class="label-text">A wide line-spacing</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinie"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinieKlein" onclick="clickedCheckbox(this)" id="interlinieKlein-check">
-                    <label for="interlinieKlein-check">A close line-spacing</label>
+                    <label for="interlinieKlein-check"><span class="label-text">A close line-spacing</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinieKlein"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaien" onclick="clickedCheckbox(this)" id="lettersDraaien-check">
-                    <label for="lettersDraaien-check">The unalterable rotation of letters</label>
+                    <label for="lettersDraaien-check"><span class="label-text">The unalterable rotation of letters</span></label>
                   <input class="slider hidden-slider" type="range" min="-1" max="1" step=".01" id="lettersDraaien"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaienOnregelmatig" onclick="clickedCheckbox(this)" id="lettersDraaienOnregelmatig-check">
-                    <label for="lettersDraaienOnregelmatig-check">The alterable rotation of letters</label>
+                    <label for="lettersDraaienOnregelmatig-check"><span class="label-text">The alterable rotation of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersDraaienOnregelmatig"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersHorizontaal" onclick="clickedCheckbox(this)" id="lettersHorizontaal-check">
-                    <label for="lettersHorizontaal-check">The trembling of letters</label>
+                    <label for="lettersHorizontaal-check"><span class="label-text">The trembling of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersHorizontaal"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenHorizontaal" onclick="clickedCheckbox(this)" id="woordenHorizontaal-check">
-                    <label for="woordenHorizontaal-check">The trembling of words</label>
+                    <label for="woordenHorizontaal-check"><span class="label-text">The trembling of words</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="woordenHorizontaal"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersBeven" onclick="clickedCheckbox(this)" id="lettersBeven-check">
-                    <label for="lettersBeven-check">The letters tremble widely</label>
+                    <label for="lettersBeven-check"><span class="label-text">The letters tremble widely</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersBeven"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenBeven" onclick="clickedCheckbox(this)" id="woordenBeven-check">
-                    <label for="woordenBeven-check">The words tremble widely</label>
+                    <label for="woordenBeven-check"><span class="label-text">The words tremble widely</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="woordenBeven"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenDraaien" onclick="clickedCheckbox(this)" id="woordenDraaien-check">
-                    <label for="woordenDraaien-check">Tipping of words</label>
+                    <label for="woordenDraaien-check"><span class="label-text">Tipping of words</span></label>
                   <input class="slider hidden-slider" type="range" value=0 min="0" max="1" step=".01" id="woordenDraaien"/>
                 </p>
             </div>
@@ -186,13 +188,12 @@
             <div>
               <p>
                 <input class="checkbox hidden-checkbox" type="checkbox" value="slechteLetterHerkenning" onclick="clickedCheckbox(this)" id="slechteLetterHerkenning-check">
-                    <label for="slechteLetterHerkenning-check">A slow letter recognition</label>
-                  <br />
+                  <label for="slechteLetterHerkenning-check"><span class="label-text">A slow letter recognition</span></label>
                   <input type="radio" name="varValueRadio" class="varValueRadio hidden-radio slechteLetterHerkenning" value="1"  id="radio-1">
-                    <label for="radio-1" class="slechteLetterHerkenning" id="radio-1">Slow</label>
+                  <label for="radio-1" class="slechteLetterHerkenning" id="radio-1">Slow</label>
                   <br />
                   <input type="radio" name="varValueRadio" class="varValueRadio hidden-radio slechteLetterHerkenning" value="0.5" id="radio-2">
-                    <label for="radio-2" class="slechteLetterHerkenning" id="radio-2">Fast</label>
+                  <label for="radio-2" class="slechteLetterHerkenning" id="radio-2">Fast</label>
               </p>
             </div>
           </fieldset>
