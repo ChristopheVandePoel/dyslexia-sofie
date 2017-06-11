@@ -23,14 +23,20 @@
           <textarea id="input" class="InputWrapper" autofocus placeholder="Type your text"></textarea>
           <div class="OutputWrapper">
             <div id="output"></div>
-            <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
-            <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+            <div class="resetlinks">
+              <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
+              or
+              <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+            </div>
           </div><!-- OutputWrapper -->
         </div><!-- inAndOutputWrapper -->
 
         <div class="fieldsetsWrapper">
           <div class="fieldsets">
             <fieldset>
+              <div class="font-links">
+                <a href="./index-en.html">DYSLECTIC</a>
+              </div>
               <h2>Textual changes</h2>
               <div class="select-wrapper">
                 <select id="fonts">
@@ -47,6 +53,13 @@
                   <option value="Helvetica">Helvetica</option>
                   <option value="Lucida Sans Std">Lucida</option>
                   <option value="Times">Times</option>
+                </select>
+              </div>
+              <div class="select-wrapper">
+                <select id="font-size">
+                  <option value="1.3">small</option>
+                  <option value="1.7" selected>normal</option>
+                  <option value="2">large</option>
                 </select>
               </div>
               <div class="font-links">

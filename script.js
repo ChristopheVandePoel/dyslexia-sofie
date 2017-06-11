@@ -475,9 +475,17 @@ $(document).ready(function() {
     });
 
     $("#fonts").on("change", function () {
-      font = $(this).val();
-      body = $(".inAndOutputWrapper");
+      var font = $(this).val();
+      var body = $(".inAndOutputWrapper");
       body.css("font-family", font);
+    });
+
+    $("#font-size").on("change", function () {
+      var fontSize = $(this).val();
+      var innBody = $(".InputWrapper");
+      var outBody = $("#output");
+      innBody.css("font-size", fontSize + "em");
+      outBody.css("font-size", fontSize + "em");
     });
 
     setCountingLabels();
