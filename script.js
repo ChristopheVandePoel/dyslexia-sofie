@@ -26,7 +26,7 @@ function checkboxClear() {
 function setCountingLabels() {
     $('label').each(function (i, element) {
         if(!element.id) {
-            $(element).prepend("<span class='indice-span'>" + (i + 1) + "&nbsp; &mdash;" + "</span>");
+            $(element).prepend("<span class='indice-span'>" + (i + 1) + "</span>");
         }
     })
 }
@@ -152,19 +152,19 @@ var swapLettersLightDubbeleLetters = {
 }
 
 var swapLettersHeavyDubbeleLetters = {
-    'a': "aaaa",
-    'b': "bbbb",
-    'c': "cccc",
-    'g': "gggg",
-    'e': "eeee",
-    'g': "gggg",
-    'k': "kkkk",
-    'm': "mmmm",
-    'n': "nnnn",
-    'o': "oooo",
-    's': "ssss",
-    't': "tttt",
-    'u': "uuuu"
+    'a': "aaa",
+    'b': "bbb",
+    'c': "ccc",
+    'g': "ggg",
+    'e': "eee",
+    'g': "ggg",
+    'k': "kkk",
+    'm': "mmm",
+    'n': "nnn",
+    'o': "ooo",
+    's': "sss",
+    't': "ttt",
+    'u': "uuu"
 
 }
 
@@ -511,6 +511,7 @@ function parseText(inputText) {
 $(document).ready(function() {
     $("#controls").on("change input", function () {
         parseText($("#input").val());
+        $("#input").focus();
     });
     $("#radio-controls").on("change input", function () {
         parseText($("#input").val());

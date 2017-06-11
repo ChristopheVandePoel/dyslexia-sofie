@@ -14,20 +14,17 @@
   <body>
     <div class="body-flex">
       <div class="nav">
-        <ul>
-          <li class="right">
-            <a href="./index.html">DUTCH</a> <a href="./index-en.html">ENGLISH</a>
-          </li>
-      </ul>
     </div><!-- nav -->
 
     <div class="bodyWrapper">
       <form id="controls">
 
         <div class="inAndOutputWrapper">
-          <textarea id="input" class="InputWrapper">De Britse prins Philip (95) zal vanaf de herfst geen publieke opdrachten meer uitvoeren. Dat maakt Buckingham Palace vanmorgen bekend, nadat koningin Elizabeth haar hele hofhouding bijeen had geroepen voor een uitzonderlijke en dringende vergadering.</textarea>
+          <textarea id="input" class="InputWrapper" autofocus placeholder="Type your text"></textarea>
           <div class="OutputWrapper">
             <div id="output"></div>
+            <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
+            <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
           </div><!-- OutputWrapper -->
         </div><!-- inAndOutputWrapper -->
 
@@ -37,7 +34,7 @@
               <h2>Textual changes</h2>
               <div class="select-wrapper">
                 <select id="fonts">
-                  <option value="Helvetica">Font</option>
+                  <option value="Helvetica">Helvetica</option>
                   <option value="Akzidenz-Grotesk BQ">Akzidenz-Grotesk</option>
                   <option value="Avenir">Avenir</option>
                   <option value="Baskerville">Baskerville</option>
@@ -53,8 +50,11 @@
                 </select>
               </div>
               <div class="font-links">
-                <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
-                <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+                <ul>
+                  <li class="right">
+                    <a href="./index.html">Nederlands</a> <a href="./index-en.html">English</a>
+                  </li>
+                </ul>
               </div>
               <div>
                 <p>
@@ -98,66 +98,66 @@
               <div>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jump" onclick="clickedCheckbox(this)" id="jump-check">
-                    <label for="jump-check"><span class="label-text">The hopping of letters</span></label>
+                  <label for="jump-check"><span class="label-text">The hopping of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jump"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jumpWoord" onclick="clickedCheckbox(this)" id="jumpWoord-check">
-                    <label for="jumpWoord-check"><span class="label-text">The hopping of words</span></label>
+                  <label for="jumpWoord-check"><span class="label-text">The hopping of words</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="jumpWoord"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingWider" onclick="clickedCheckbox(this)" id="trackingWider-check">
-                    <label for="trackingWider-check"><span class="label-text">A wider tracking</span></label>
+                  <label for="trackingWider-check"><span class="label-text">A wider tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingWider"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="trackingSmaller" onclick="clickedCheckbox(this)" id="trackingSmaller-check">
-                    <label for="trackingSmaller-check"><span class="label-text">A narrow tracking</span></label>
+                  <label for="trackingSmaller-check"><span class="label-text">A narrow tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="trackingSmaller"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="tracking" onclick="clickedCheckbox(this)" id="tracking-check">
-                    <label for="tracking-check"><span class="label-text">An atypical tracking</span></label>
+                  <label for="tracking-check"><span class="label-text">An atypical tracking</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="tracking"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesBreed" onclick="clickedCheckbox(this)" id="spatiesBreed-check">
-                    <label for="spatiesBreed-check"><span class="label-text">A wide space</span></label>
+                  <label for="spatiesBreed-check"><span class="label-text">A wide space</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesBreed"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesNauw" onclick="clickedCheckbox(this)" id="spatiesNauw-check">
-                    <label for="spatiesNauw-check"><span class="label-text">A close space</span></label>
+                  <label for="spatiesNauw-check"><span class="label-text">A close space</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="spatiesNauw"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="spatiesWeg" onclick="clickedCheckbox(this)" id="spatiesWeg-check">
-                    <label for="spatiesWeg-check"><span class="label-text">A missing space</span></label>
+                  <label for="spatiesWeg-check"><span class="label-text">A missing space</span></label>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinie" onclick="clickedCheckbox(this)" id="interlinie-check">
-                    <label for="interlinie-check"><span class="label-text">A wide line-spacing</span></label>
+                  <label for="interlinie-check"><span class="label-text">A wide line-spacing</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinie"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="interlinieKlein" onclick="clickedCheckbox(this)" id="interlinieKlein-check">
-                    <label for="interlinieKlein-check"><span class="label-text">A close line-spacing</span></label>
+                  <label for="interlinieKlein-check"><span class="label-text">A close line-spacing</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="interlinieKlein"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaien" onclick="clickedCheckbox(this)" id="lettersDraaien-check">
-                    <label for="lettersDraaien-check"><span class="label-text">The unalterable rotation of letters</span></label>
+                  <label for="lettersDraaien-check"><span class="label-text">The unalterable rotation of letters</span></label>
                   <input class="slider hidden-slider" type="range" min="-1" max="1" step=".01" id="lettersDraaien"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersDraaienOnregelmatig" onclick="clickedCheckbox(this)" id="lettersDraaienOnregelmatig-check">
-                    <label for="lettersDraaienOnregelmatig-check"><span class="label-text">The alterable rotation of letters</span></label>
+                  <label for="lettersDraaienOnregelmatig-check"><span class="label-text">The alterable rotation of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersDraaienOnregelmatig"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersHorizontaal" onclick="clickedCheckbox(this)" id="lettersHorizontaal-check">
-                    <label for="lettersHorizontaal-check"><span class="label-text">The trembling of letters</span></label>
+                  <label for="lettersHorizontaal-check"><span class="label-text">The trembling of letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersHorizontaal"/>
                 </p>
                 <p>
@@ -188,7 +188,7 @@
             <div>
               <p>
                 <input class="checkbox hidden-checkbox" type="checkbox" value="slechteLetterHerkenning" onclick="clickedCheckbox(this)" id="slechteLetterHerkenning-check">
-                  <label for="slechteLetterHerkenning-check"><span class="label-text">A slow letter recognition</span></label>
+                <label for="slechteLetterHerkenning-check"><span class="label-text">A slow letter recognition</span></label>
                   <input type="radio" name="varValueRadio" class="varValueRadio hidden-radio slechteLetterHerkenning" value="1"  id="radio-1">
                   <label for="radio-1" class="slechteLetterHerkenning" id="radio-1">Slow</label>
                   <br />

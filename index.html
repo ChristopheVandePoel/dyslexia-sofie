@@ -14,20 +14,21 @@
   <body>
     <div class="body-flex">
       <div class="nav">
-        <ul>
-          <li class="right">
-            <a href="./index.html">NEDERLANDS</a> <a href="./index-en.html">ENGELS</a>
-          </li>
-      </ul>
     </div><!-- nav -->
 
     <div class="bodyWrapper">
       <form id="controls">
 
         <div class="inAndOutputWrapper">
-          <textarea id="input" class="InputWrapper">De Britse prins Philip (95) zal vanaf de herfst geen publieke opdrachten meer uitvoeren. Dat maakt Buckingham Palace vanmorgen bekend, nadat koningin Elizabeth haar hele hofhouding bijeen had geroepen voor een uitzonderlijke en dringende vergadering.</textarea>
+          <textarea id="input" class="InputWrapper" autofocus placeholder="Typ uw tekst"></textarea>
           <div class="OutputWrapper">
             <div id="output"></div>
+
+            <div class="resetlinks">
+              <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
+              of
+              <h2 class="reset-link"><a href="javascript:window.print()">print</a></h2>
+            </div><!-- resetlinks -->
           </div><!-- OutputWrapper -->
         </div><!-- inAndOutputWrapper -->
 
@@ -37,7 +38,7 @@
               <h2>Textuele veranderingen</h2>
               <div class="select-wrapper">
                 <select id="fonts">
-                  <option value="Helvetica">Lettertype</option>
+                  <option value="Helvetica">Helvetica</option>
                   <option value="Akzidenz-Grotesk BQ">Akzidenz-Grotesk</option>
                   <option value="Avenir">Avenir</option>
                   <option value="Baskerville">Baskerville</option>
@@ -53,8 +54,11 @@
                 </select>
               </div>
               <div class="font-links">
-                <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
-                <h2 class="reset-link"><a href="javascript:window.print()">Print</a></h2>
+                <ul>
+                  <li class="right">
+                    <a href="./index.html">Nederlands</a> <a href="./index-en.html">English</a>
+                  </li>
+                </ul>
               </div>
               <div>
                 <p>
@@ -157,12 +161,12 @@
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="lettersHorizontaal" onclick="clickedCheckbox(this)" id="lettersHorizontaal-check">
-                  <label for="lettersHorizontaal-check"><span class="label-text">Letters beven horizontaal</span></label>
+                  <label for="lettersHorizontaal-check"><span class="label-text">Het beven van letters</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="lettersHorizontaal"/>
                 </p>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="woordenHorizontaal" onclick="clickedCheckbox(this)" id="woordenHorizontaal-check">
-                    <label for="woordenHorizontaal-check"><span class="label-text">Het beven van Letters</span></label>
+                    <label for="woordenHorizontaal-check"><span class="label-text">Het beven van woorden</span></label>
                   <input class="slider hidden-slider" type="range" value="0" min="0" max="1" step=".01" id="woordenHorizontaal"/>
                 </p>
                 <p>

@@ -5,9 +5,8 @@
 body, html {
     font-family: Helvetica;
     font-style: normal;
-    font-size: 8pt;
+    font-size: 1em;
   }
-
 
 .body-flex {
   height: 100vh;
@@ -16,7 +15,6 @@ body, html {
   font-size: 0.9em;
 }
 
-
 .nav a {
   text-decoration: none;
   color: black;
@@ -24,7 +22,7 @@ body, html {
 }
 
 a:hover {
-  color: blue;
+  text-decoration: underline;
 }
 
 .nav {
@@ -33,7 +31,6 @@ a:hover {
     letter-spacing: 5px;
     font-size: 1.2em;
     flex: 0;
-    border-bottom: 2px solid black;
     margin-bottom: 20px;
 }
 
@@ -102,7 +99,7 @@ a:hover {
 
 .InputWrapper {
   border: 0;
-  border-right: 2px solid black;
+  border-right: 1px solid black;
 }
 
 .OutputWrapper {
@@ -122,30 +119,52 @@ a:hover {
 div.font-links {
   margin-left: 20px;
 }
+
 h2.reset-link {
-  padding-top: 0;
-  font-size: 0.8em;
+  padding-top: 0px;
+  font-size: 1em;
   text-align: right;
   padding: 0;
+  color: black;
   display: inline;
   text-transform: none;
-  text-decoration: underline;
 }
+
+.reset-link a {
+  color: black;
+  text-decoration: none;
+}
+
+.reset-link a:hover {
+  text-decoration: underline;
+
+}
+
+.resetlinks {
+  position: absolute;
+  bottom: 20px;
+  left: 525px;
+  color: black;
+
+}
+
 h2.font-title {
   padding-bottom: 0;
 }
 
 .fieldsets #fonts{
-  border: 1px solid #e6e6e6;
+  border: none;
   background: transparent;
   -webkit-appearance: none;
   -moz-appearance: none;
-  padding: 5px;
+  padding: 0;
   margin: 0 0 0 20px;
-  display: inline-block;
-  font-size: 0.8em;
+  display: inline;
+  font-size: 0.75em;
   outline: none;
   width: 80%;
+  text-transform: none;
+  text-decoration: underline;
 }
 
 fieldset div {
@@ -156,18 +175,20 @@ fieldset div {
     font-size: 1.4em;
 }
 
-.select-wrapper:after {
-  content: "↓";
-  font-size: 80%;
+.fieldsets {
+  font-size: 12px;
 }
 
 .fieldsets a {
   color: inherit;
   text-decoration: none;
+  text-decoration: underline;
 }
 
 .fieldsets a:hover {
-  color: blue;
+  text-decoration: underline;
+  color: black;
+  cursor: pointer;
 }
 
 .slider.hidden-slider, .varValueRadio.hidden-radio, label.slechteLetterHerkenning {
@@ -179,19 +200,21 @@ fieldset div {
 }
 
 .indice-span {
-  width: 50px;
+  width: 25px;
   display: inline-block;
   text-align: right;
-  margin-right: 25px;
+  margin-right: 10px;
 }
 
 label:hover{
-  color: blue;
+  text-decoration: underline;
+  color: black;
   cursor: pointer;
 }
 
 .hidden-checkbox:checked + label {
-  color: steelblue;
+  text-decoration: underline;
+  color: black;
 }
 
 input[type="radio"].slechteLetterHerkenning{
@@ -214,7 +237,7 @@ input[type=range]:focus {
 /* Special styling for WebKit/Blink */
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
-  height: 8px;
+  height: 10px;
   cursor: pointer;
   background: #f1f1f1;
 }
