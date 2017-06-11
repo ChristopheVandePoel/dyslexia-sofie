@@ -73,134 +73,88 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// start swap characters
-var swapLettersLight = {
-    'b': "d",
-    'd': "b",
-    'p': 'q',
-    'q': 'p',
-    'm': 'w',
-    'w': 'm'
-}
-
-var swapLettersHeavy = {
-    'a' : 'e',
-    'e' : 'a',
-    'f' : 'v',
-    'v' : 'f'
-}
-
 function swapCharacters(intputText, useHeavy) {
-    var swapLetters = {};
-    if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLight, swapLettersHeavy);
+    var swaplettersTest = {
+        'b': "d",
+        'd': "b",
+        'p': 'q',
+        'q': 'p',
+        'm': 'w',
+        'w': 'm',
+        'a' : 'e',
+        'e' : 'a',
+        'f' : 'v',
+        'v' : 'f'
     }
-    else {
-        swapLetters = $.extend({}, swapLettersLight);
+    let keys = Object.keys(swaplettersTest);
+    let neededSwaps = keys.slice(Math.floor(useHeavy*keys.length), swaplettersTest.length);
+    for(var i = 0; i < neededSwaps.length; i++){
+        delete swaplettersTest[neededSwaps[i]];
     }
-    return intputText.replaceAllWith(swapLetters);
+    return intputText.replaceAllWith(swaplettersTest);
 }
 // end swap characters
 
 // start swap tweeklanken
-var swapLettersLightTweeKlank = {
-    'au': "ua",
-    'ou': "uo",
-    'ei': "ij",
-    'ij': "ei",
-    'eu': "ue",
-    'ui': "iu",
-}
-
-var swapLettersHeavyTweeKlank = {
-    'au': "ua",
-    'ou': "uo",
-    'ei': "ij",
-    'ij': "ei",
-    'eu': "ue",
-    'ui': "iu",
-    'aa': "ee",
-    'ee': "aa",
-    'ou': "uo",
-    'oe': "eo"
-}
-
 function swapTweeKlank(intputText, useHeavy) {
-    var swapLetters = {};
-    if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLightTweeKlank, swapLettersHeavyTweeKlank);
+    var swaplettersTest = {
+        'au': "ua",
+        'ou': "uo",
+        'ei': "ij",
+        'ij': "ei",
+        'eu': "ue",
+        'ui': "iu",
+        'aa': "ee",
+        'ee': "aa",
+        'ou': "uo",
+        'oe': "eo"
     }
-    else {
-        swapLetters = $.extend({}, swapLettersLightTweeKlank);
+    let keys = Object.keys(swaplettersTest);
+    let neededSwaps = keys.slice(Math.floor(useHeavy*keys.length), swaplettersTest.length);
+    for(var i = 0; i < neededSwaps.length; i++){
+        delete swaplettersTest[neededSwaps[i]];
     }
-    return intputText.replaceAllWith(swapLetters);
+    return intputText.replaceAllWith(swaplettersTest);
 }
 // end swap tweeklanken
 
 // start swap double characters
-var swapLettersLightDubbeleLetters = {
-    'a': "aa",
-    'b': "bb",
-    'c': "cc",
-    'g': "gg",
-    'n': "nn",
-    'o': "oo",
-    's': "ss",
-    't': "tt",
-    'u': "uu"
-
-}
-
-var swapLettersHeavyDubbeleLetters = {
-    'a': "aaa",
-    'b': "bbb",
-    'c': "ccc",
-    'g': "ggg",
-    'e': "eee",
-    'g': "ggg",
-    'k': "kkk",
-    'm': "mmm",
-    'n': "nnn",
-    'o': "ooo",
-    's': "sss",
-    't': "ttt",
-    'u': "uuu"
-
-}
-
 function swapperDubbeleLetters(intputText, useHeavy) {
-    var swapLetters = {};
-    if (useHeavy > .5) {
-        swapLetters = $.extend({}, swapLettersLightDubbeleLetters, swapLettersHeavyDubbeleLetters);
+    var swaplettersTest = {
+        'a': "aa",
+        'b': "bb",
+        'c': "cc",
+        'g': "gg",
+        'n': "nn",
+        'o': "oo",
+        's': "ss",
+        't': "tt",
+        'u': "uu",
+    };
+
+    let keys = Object.keys(swaplettersTest);
+    let neededSwaps = keys.slice(Math.floor(useHeavy*keys.length), swaplettersTest.length);
+    console.log(neededSwaps);
+    for(var i = 0; i < neededSwaps.length; i++){
+        delete swaplettersTest[neededSwaps[i]];
     }
-    else {
-        swapLetters = $.extend({}, swapLettersLightDubbeleLetters);
-    }
-    return intputText.replaceAllWith(swapLetters);
+    return intputText.replaceAllWith(swaplettersTest);
 }
 // end swap double characters
 
 // start swap whole words
 function swapWords(inputText, swapValue) {
-    var outputText = ""
-    var elements = inputText.split(" ")
-    // maxSwaps = elements.length * swapValue
-    // for (i=0; i<maxSwaps;i++) {
-    //     index1 = getRandomInt(0, elements.length-1)
-    //     index2 = getRandomInt(0, elements.length-1)
-    //     w1 = elements[index1]
-    //     w2 = elements[index2]
-    //     elements[index1] = w2
-    //     elements[index2] = w1
-    // }
-   var maxWordLength = 10 - 10 * swapValue
-    for (index = 0; index < elements.length; index++) {
-      var item = elements[index];
+    var outputText = "";
+    var elements = inputText.split(" ");
 
-      if (item.length > maxWordLength) {
-        elements.splice(index, 1);
-        elements.splice(getRandomInt(0, elements.length-1), 0, item);
-      }
+    var maxWordLength = 10 - 10 * swapValue;
+    for (index = 0; index < elements.length; index++) {
+        var item = elements[index];
+
+        if (item.length > maxWordLength) {
+            elements.splice(index, 1);
+            elements.splice(getRandomInt(index-2, index+2), 0, item);
+        }
     }
     return elements.join(" ");
 }
@@ -275,87 +229,90 @@ function parseText(inputText) {
     $("#controls .checkbox").each(function() {
         if (this.checked) {
             var sliderValue = parseFloat($(this).siblings(".slider").val());
-            var varValue = $(this).nextAll('input[type=radio]:checked').val();
-            switch (this.value) {
-            // textual changes
-                case "insideWordSwap":
-                    outputText = insideWordSwap(outputText, sliderValue);
+            if(sliderValue !== 0) {
+                console.log(sliderValue);
+                var varValue = $(this).nextAll('input[type=radio]:checked').val();
+                switch (this.value) {
+                // textual changes
+                    case "insideWordSwap":
+                        outputText = insideWordSwap(outputText, sliderValue);
+                        break;
+                    case "swapWords":
+                        outputText = swapWords(outputText, sliderValue);
+                        break;
+                    case "swapCharacters":
+                        outputText = swapCharacters(outputText, sliderValue);
+                        break;
+                    case "swapTweeKlank":
+                        outputText = swapTweeKlank(outputText, sliderValue);
+                        break;
+                    case "swapperDubbeleLetters":
+                        outputText = swapperDubbeleLetters(outputText, sliderValue);
+                        break;
+                    case "spatiesWeg":
+                        outputText = spatiesWeg(outputText, sliderValue);
+                        break;
+                    // visual changes
+                    case "jump":
+                        jump = sliderValue;
+                        break;
+                    case "jumpWoord":
+                        jumpWoord = sliderValue;
+                        break;
+                    case "tracking":
+                        tracking = sliderValue;
+                        break;
+                    case "trackingWider":
+                        trackingWider = sliderValue;
+                        break;
+                    case "trackingSmaller":
+                        trackingSmaller = sliderValue;
+                        break;
+                    case "slechteLetterHerkenning":
+                        slechteLetterHerkenning = 1;
+                        break;
+                    case "spiegelSchrift":
+                        spiegelSchrift = true;
+                        break;
+                    case "ondersteBoven":
+                        ondersteBoven = true;
+                        break;
+                    case "lettersDraaien":
+                        lettersDraaien = sliderValue;
+                        break;
+                    case "lettersDraaienOnregelmatig":
+                        lettersDraaienOnregelmatig = sliderValue;
+                        break;
+                    case "spatiesBreed":
+                        spatiesBreed = sliderValue;
+                        break;
+                    case "spatiesNauw":
+                        spatiesNauw = sliderValue;
+                        break;
+                    case "lettersBeven":
+                        lettersBeven = sliderValue;
+                        break;
+                    case "woordenBeven":
+                        woordenBeven = sliderValue;
+                        break;
+                    case "lettersHorizontaal":
+                        lettersHorizontaal = sliderValue;
+                        break;
+                    case "woordenHorizontaal":
+                        woordenHorizontaal = sliderValue;
+                        break;
+                    case "interlinie":
+                        interlinie = sliderValue
+                        break;
+                    case "interlinieKlein":
+                        interlinieKlein = sliderValue;
+                        break;
+                case "woordenDraaien":
+                        woordenDraaien = sliderValue;
+                        break;
+                default:
                     break;
-                case "swapWords":
-                    outputText = swapWords(outputText, sliderValue);
-                    break;
-                case "swapCharacters":
-                    outputText = swapCharacters(outputText, sliderValue);
-                    break;
-                case "swapTweeKlank":
-                    outputText = swapTweeKlank(outputText, sliderValue);
-                    break;
-                case "swapperDubbeleLetters":
-                    outputText = swapperDubbeleLetters(outputText, sliderValue);
-                    break;
-                case "spatiesWeg":
-                    outputText = spatiesWeg(outputText, sliderValue);
-                    break;
-                // visual changes
-                case "jump":
-                    jump = sliderValue;
-                    break;
-                case "jumpWoord":
-                    jumpWoord = sliderValue;
-                    break;
-                case "tracking":
-                    tracking = sliderValue;
-                    break;
-        				case "trackingWider":
-                    trackingWider = sliderValue;
-        					  break;
-        				case "trackingSmaller":
-        					  trackingSmaller = sliderValue;
-        					  break;
-        				case "slechteLetterHerkenning":
-        					  slechteLetterHerkenning = varValue;
-        					  break;
-                case "spiegelSchrift":
-                    spiegelSchrift = true;
-                    break;
-                case "ondersteBoven":
-                    ondersteBoven = true;
-                    break;
-                case "lettersDraaien":
-                    lettersDraaien = sliderValue;
-                    break;
-                case "lettersDraaienOnregelmatig":
-                    lettersDraaienOnregelmatig = sliderValue;
-                    break;
-                case "spatiesBreed":
-                    spatiesBreed = sliderValue;
-                    break;
-                case "spatiesNauw":
-                    spatiesNauw = sliderValue;
-                    break;
-                case "lettersBeven":
-                    lettersBeven = sliderValue;
-                    break;
-                case "woordenBeven":
-                    woordenBeven = sliderValue;
-                    break;
-                case "lettersHorizontaal":
-                    lettersHorizontaal = sliderValue;
-                    break;
-                case "woordenHorizontaal":
-                    woordenHorizontaal = sliderValue;
-                    break;
-                case "interlinie":
-                    interlinie = sliderValue
-                    break;
-                case "interlinieKlein":
-                    interlinieKlein = sliderValue;
-                    break;
-               case "woordenDraaien":
-                    woordenDraaien = sliderValue;
-                    break;
-               default:
-                   break;
+                    }
                 }
           }
     });
@@ -365,8 +322,8 @@ function parseText(inputText) {
     outputText = outputText.replace(/\S|\s/g, function (match) {
         var style = '';
         var clss = 'letter';
-        var letterSpacing = Math.random() * tracking + trackingWider - trackingSmaller;
-        var interlinieValue = 1 + 10 * (interlinie - interlinieKlein) * 10;
+        var letterSpacing = (Math.random() * tracking + trackingWider - trackingSmaller) * 0.15;
+        var interlinieValue = 1 + 10 * (interlinie - interlinieKlein);
 
         if ((spatiesBreed || spatiesNauw) && match == " ") {
            letterSpacing = spatiesBreed - spatiesNauw;
@@ -389,11 +346,11 @@ function parseText(inputText) {
              var transformStyle = '';
 
              if (lettersDraaien) {
-                transformStyle += "rotate(" + lettersDraaien * 40 + "deg)";
+                transformStyle += "rotate(" + lettersDraaien * 20 + "deg)";
              }
 
              if (lettersDraaienOnregelmatig) {
-                transformStyle += "rotate(" + lettersDraaienOnregelmatig * 20 * (Math.random() - .5) + "deg)";
+                transformStyle += "rotate(" + lettersDraaienOnregelmatig * 40 * (Math.random() - .5) + "deg)";
              }
 
              if (lettersBeven) {
