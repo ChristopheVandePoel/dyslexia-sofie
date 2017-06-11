@@ -134,7 +134,6 @@ function swapperDubbeleLetters(intputText, useHeavy) {
 
     let keys = Object.keys(swaplettersTest);
     let neededSwaps = keys.slice(Math.floor(useHeavy*keys.length), swaplettersTest.length);
-    console.log(neededSwaps);
     for(var i = 0; i < neededSwaps.length; i++){
         delete swaplettersTest[neededSwaps[i]];
     }
@@ -230,7 +229,7 @@ function parseText(inputText) {
         if (this.checked) {
             var sliderValue = parseFloat($(this).siblings(".slider").val());
             if(sliderValue !== 0) {
-                console.log(sliderValue);
+                // console.log(sliderValue);
                 var varValue = $(this).nextAll('input[type=radio]:checked').val();
                 switch (this.value) {
                 // textual changes
