@@ -322,7 +322,7 @@ function parseText(inputText) {
         var style = '';
         var clss = 'letter';
         var letterSpacing = (Math.random() * tracking + trackingWider - trackingSmaller) * 0.15;
-        var interlinieValue = 1 + 10 * (interlinie - interlinieKlein);
+        var interlinieValue = 1 + 50 * (interlinie - interlinieKlein / 3);
 
         if ((spatiesBreed || spatiesNauw) && match == " ") {
            letterSpacing = spatiesBreed - spatiesNauw;
