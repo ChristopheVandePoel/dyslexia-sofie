@@ -487,6 +487,15 @@ $(document).ready(function() {
       outBody.css("font-size", fontSize + "em");
     });
 
+    $(window).resize(function() {
+        //console.log($('#output').width());
+        $('#need-sizeforthis').width(($('#output').width()));
+    });
+
     setCountingLabels();
     parseText($("#input").val());
+    setTimeout(function() {
+        $('#need-sizeforthis').css('display', 'block');
+        $('#need-sizeforthis').width(($('#output').width()));
+    }, 1);
 })

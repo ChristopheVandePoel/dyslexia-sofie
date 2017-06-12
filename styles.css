@@ -51,17 +51,15 @@ a:hover {
 }
 
 .fieldsetsWrapper {
-  font-size: 1.2em;
+  font-size: 1.4em;
   line-height: 1.2em;
   padding-right: 20px;
   overflow: auto;
   border-collapse: collapse;
-  border-left: 1px solid #272727;
 }
 
 .fieldsetsWrapper label {
   display: flex;
-  padding-bottom: 0.5em;
   line-height: 1.3em;
 }
 
@@ -98,12 +96,15 @@ a:hover {
   font-size: 1.7em;
   border: 0;
   border-right: 1px solid black;
+  margin-bottom: 0.5em;
 }
 
 .OutputWrapper {
   overflow: auto;
-  padding-top: 20px;
-  margin-top: -20px;
+  border-right: 1px solid #272727;
+  margin-bottom: 0.7em;
+  padding-top: 40px;
+  margin-top: -40px;
 }
 
 /*CONTROLS*/
@@ -115,7 +116,12 @@ a:hover {
 }
 
 div.font-links {
-  margin-left: 20px;
+  margin-left: 0.7em;
+  margin-top: 0.7em;
+}
+
+div.font-links.top {
+  margin-top: 0;
 }
 
 h2.reset-link {
@@ -125,7 +131,7 @@ h2.reset-link {
   padding: 0;
   color: black;
   display: inline;
-  text-transform: none;
+  text-transform: uppercase;
 }
 
 .reset-link a {
@@ -138,15 +144,25 @@ h2.reset-link {
 
 }
 
+.reset-link.left {
+  float:left;
+}
+.reset-link.right {
+  float: right;
+}
 .resetlinks {
     position: fixed;
-    bottom: 0;
+    bottom: 5px;
     color: black;
     background-color: rgba(255, 255, 255, 0.84);
     display: block;
-    padding: 5px;
-    font-size: 1.2em;
+    padding: 5px 0 10px 10px;
+    font-size: 1.4em;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+#need-sizeforthis {
+  display: none;
 }
 
 h2.font-title {
@@ -159,21 +175,15 @@ h2.font-title {
   -webkit-appearance: none;
   -moz-appearance: none;
   padding: 0;
-  margin: 0 0 0 20px;
   display: inline;
   font-size: 0.75em;
   outline: none;
   text-transform: none;
-  text-decoration: underline;
-}
-
-fieldset div {
-  line-height: 1.7em;
+  text-decoration: none;
 }
 
 .select-wrapper {
     font-size: 1.4em;
-    display: inline-block
 }
 
 .fieldsets {
@@ -183,7 +193,6 @@ fieldset div {
 .fieldsets a {
   color: inherit;
   text-decoration: none;
-  text-decoration: underline;
 }
 
 .fieldsets a:hover {
@@ -202,7 +211,7 @@ fieldset div {
 
 .indice-span {
   width: 25px;
-  display: inline-block;
+  display: none;
   text-align: right;
   margin-right: 10px;
 }
@@ -213,6 +222,10 @@ fieldset div {
 
 .label-text > span:hover {
   border-bottom: 1px solid black;
+}
+
+span.label-text span {
+  letter-spacing: -0.02em;
 }
 
 .label-text:hover{
@@ -227,10 +240,19 @@ input[type="radio"].slechteLetterHerkenning{
   margin-left: 50px;
 }
 
+.placed-div {
+  margin-top: 0.2em;
+  margin-left: 1.5em;
+}
+
+.placed-div p {
+  min-height: 1.4em
+}
+
 /* RANGE SLIDER STYLES */
 
 input[type=range] {
-  padding: 10px 50px 15px 30px;
+  padding: 20px 50px 20px 0px;
 }
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
@@ -248,7 +270,7 @@ input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: black;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -263,7 +285,7 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: #f1f1f1;
+  background: black;
 }
 
 
@@ -272,7 +294,7 @@ input[type=range]::-moz-range-track {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: black;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -289,7 +311,7 @@ input[type=range]::-ms-track {
   width: 100%;
   height: 1px;
   cursor: pointer;
-  background: #f1f1f1;
+  background: black;
   border-color: white;
   border-width: 1px 0;
   color: #f1f1f1;

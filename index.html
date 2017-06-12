@@ -23,54 +23,60 @@
           <textarea id="input" class="InputWrapper" autofocus placeholder="Typ uw tekst"></textarea>
           <div class="OutputWrapper">
             <div id="output"></div>
+            <div class="container-for-fixed">
+              <div class="resetlinks" id='need-sizeforthis'>
+                <h2 class="reset-link left"><a href="#" onclick="resetLanguage(this, event)">Reset Handelingen</a></h2>
 
-            <div class="resetlinks">
-              <h2 class="reset-link"><a href="#" onclick="resetLanguage(this, event)">Reset</a></h2>
-              of
-              <h2 class="reset-link"><a href="javascript:window.print()">print</a></h2>
-            </div><!-- resetlinks -->
+                <h2 class="reset-link right"><a href="javascript:window.print()">print</a></h2>
+              </div><!-- resetlinks -->
+            </div>
           </div><!-- OutputWrapper -->
         </div><!-- inAndOutputWrapper -->
 
         <div class="fieldsetsWrapper">
           <div class="fieldsets">
             <fieldset>
-              <div class="font-links">
+              <div class="font-links top">
                 <a href="./index.html">DYSLECTIC</a>
               </div>
-              <h2>Textuele veranderingen</h2>
-              <div class="select-wrapper">
-                <select id="fonts">
-                  <option value="Helvetica">Helvetica</option>
-                  <option value="Akzidenz-Grotesk BQ">Akzidenz-Grotesk</option>
-                  <option value="Avenir">Avenir</option>
-                  <option value="Baskerville">Baskerville</option>
-                  <option value="Bodoni Std">Bodoni</option>
-                  <option value="Big Calson">Calson</option>
-                  <option value="Courier">Courier</option>
-                  <option value="Futura">Futura</option>
-                  <option value="Garamond">Garamond</option>
-                  <option value="Gill Sans">Gill Sans</option>
-                  <option value="Helvetica">Helvetica</option>
-                  <option value="Lucida Sans Std">Lucida</option>
-                  <option value="Times">Times</option>
-                </select>
-              </div>
-              <div class="select-wrapper">
-                <select id="font-size">
-                  <option value="1.3">small</option>
-                  <option value="1.7" selected>normal</option>
-                  <option value="2">large</option>
-                </select>
+              <div class="font-links">
+                  <a href="./index-en.html">ENGLISH</a> OF <br />
+                 <a href="./index.html">NEDERLANDS</a>
               </div>
               <div class="font-links">
-                <ul>
-                  <li class="right">
-                    <a href="./index.html">Nederlands</a> <a href="./index-en.html">English</a>
-                  </li>
-                </ul>
+                KEUZE LETTERTYPE
               </div>
-              <div>
+              <div class="placed-div">
+                <div class="select-wrapper">
+                  <select id="fonts">
+                    <option value="Helvetica">Lettertype</option>
+                    <option value="Akzidenz-Grotesk BQ">Akzidenz-Grotesk</option>
+                    <option value="Avenir">Avenir</option>
+                    <option value="Baskerville">Baskerville</option>
+                    <option value="Bodoni Std">Bodoni</option>
+                    <option value="Big Calson">Calson</option>
+                    <option value="Courier">Courier</option>
+                    <option value="Futura">Futura</option>
+                    <option value="Garamond">Garamond</option>
+                    <option value="Gill Sans">Gill Sans</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Lucida Sans Std">Lucida</option>
+                    <option value="Times">Times</option>
+                  </select>
+                </div>
+                <div class="select-wrapper">
+                  <select id="font-size">
+                    <option value="1.7" selected>Lettergrootte</option>
+                    <option value="1.3">small</option>
+                    <option value="1.7">normal</option>
+                    <option value="2">large</option>
+                  </select>
+                </div>
+              </div>
+              <div class="font-links">
+                KEUZE PROBLEEM
+              </div>
+              <div class="placed-div">
                 <p>
                     <input class="checkbox hidden-checkbox" type="checkbox" value="insideWordSwap" onclick="clickedCheckbox(this)" id="insideWordSwap-check">
                     <label for="insideWordSwap-check"><span class="label-text"><span>Het verspringen van letters in een woord</span></span></label>
@@ -104,12 +110,6 @@
                     <input class="checkbox hidden-checkbox" type="checkbox" value="ondersteBoven" onclick="clickedCheckbox(this)" id="ondersteBoven-check">
                     <label for="ondersteBoven-check"><span class="label-text"><span>De letters kantelen om</span></span></label>
                 </p>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <h2>Visuele veranderingen</h2>
-              <div>
                 <p>
                   <input class="checkbox hidden-checkbox" type="checkbox" value="jump" onclick="clickedCheckbox(this)" id="jump-check">
                   <label for="jump-check"><span class="label-text"><span>Het springen van letters</span></span></label>
@@ -194,12 +194,6 @@
                     <label for="woordenDraaien-check"><span class="label-text"><span>Het kantelen van woorden</span></span></label>
                   <input class="slider hidden-slider" type="range" value=0 min="0" max="1" step=".01" id="woordenDraaien"/>
                 </p>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <h2>Animaties</h2>
-            <div>
               <p>
                 <input class="checkbox hidden-checkbox" type="checkbox" value="slechteLetterHerkenning" onclick="clickedCheckbox(this)" id="slechteLetterHerkenning-check">
                 <label for="slechteLetterHerkenning-check"><span class="label-text"><span>Een langzame letterherkenning</span></span></label>
