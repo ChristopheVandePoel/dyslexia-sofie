@@ -268,7 +268,7 @@ function parseText(inputText) {
                         trackingSmaller = sliderValue;
                         break;
                     case "slechteLetterHerkenning":
-                        slechteLetterHerkenning = 1;
+                        slechteLetterHerkenning = 2;
                         break;
                     case "spiegelSchrift":
                         spiegelSchrift = true;
