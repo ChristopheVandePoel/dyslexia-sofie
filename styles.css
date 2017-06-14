@@ -51,11 +51,13 @@ a:hover {
 }
 
 .fieldsetsWrapper {
-  font-size: 1.4em;
+  font-size: 1.25em;
   line-height: 1.2em;
   padding-right: 20px;
   overflow: auto;
   border-collapse: collapse;
+  border-left: 1px solid black;
+  margin-bottom: 15px;
 }
 
 .fieldsetsWrapper label {
@@ -101,7 +103,6 @@ a:hover {
 
 .OutputWrapper {
   overflow: auto;
-  border-right: 1px solid #272727;
   margin-bottom: 0.7em;
   padding-top: 40px;
   margin-top: -40px;
