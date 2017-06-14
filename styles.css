@@ -57,7 +57,7 @@ a:hover {
   overflow: auto;
   border-collapse: collapse;
   border-left: 1px solid black;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .fieldsetsWrapper label {
@@ -98,7 +98,7 @@ a:hover {
   font-size: 1.7em;
   border: 0;
   border-right: 1px solid black;
-  margin-bottom: 0.5em;
+  margin-bottom: 20px;
 }
 
 .OutputWrapper {
@@ -153,11 +153,11 @@ h2.reset-link {
 }
 .resetlinks {
     position: fixed;
-    bottom: 5px;
+    bottom: 0;
     color: black;
     background-color: rgba(255, 255, 255, 0.84);
     display: block;
-    padding: 5px 0 10px 10px;
+    padding: 5px 0 20px 10px;
     font-size: 1.4em;
     font-family: Arial, Helvetica, sans-serif;
 }
