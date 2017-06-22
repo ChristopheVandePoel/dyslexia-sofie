@@ -4,7 +4,7 @@
     width: 100%;
     padding-top: 25px;
   }
-  .fieldsets, .fieldsetsWrapper, .InputWrapper, .nav, .resetlinks {
+  .fieldsets, .fieldsetsWrapper, .InputWrapper, .nav, .resetlinks, .reset-link {
     display: none;
   }
 }
